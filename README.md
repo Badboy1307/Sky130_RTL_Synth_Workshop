@@ -14,7 +14,7 @@ VSD Sky130 RTL was a five day workshop where I have learnt about the open source
 
 ![image](https://user-images.githubusercontent.com/60011091/119868845-318a7580-bf3d-11eb-816c-7fef5d3e4eb0.png) 
 
-![Untitled Workspace (1)](https://user-images.githubusercontent.com/60011091/120014223-6eb73c00-bfff-11eb-8ba8-080a895ecea8.png)
+
 
 ![image](https://user-images.githubusercontent.com/60011091/119868918-46670900-bf3d-11eb-8873-ab8074c8f015.png)
 
@@ -101,8 +101,9 @@ Synthesizer is a tool to convert RTL Code to netlist. Yosys is the synthesizer u
 
 ![download (1)](https://user-images.githubusercontent.com/60011091/119988279-8bde1180-bfe3-11eb-9cba-d385700603a2.png)
 
+![Untitled Workspace (1)](https://user-images.githubusercontent.com/60011091/120014223-6eb73c00-bfff-11eb-8ba8-080a895ecea8.png)
 
-![image](https://user-images.githubusercontent.com/60011091/119988024-47eb0c80-bfe3-11eb-8588-06ecbeaab580.png)
+
 
 The above image shows the flow of yosys. Yosys takes RTL code and .lib files as input and netlist as output. Netlist is the standard cell representation of the design.
 
