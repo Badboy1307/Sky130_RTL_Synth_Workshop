@@ -1,3 +1,5 @@
+
+
 # Sky130 RTL Design and Synthesis Workshop
 
 VSD Sky130 RTL was a five day workshop where I have learnt about the open source tools used in the VLSI Industry, timing liberties, hierarchical and flat synthesis concepts, optimization in both sequencial logic and combinational logic circuitry codes, GLS Blocking and non blocking statements and finally I have learnt about the optimization techniques used during synthesis of both logic and combinational logic circuitry codes . I will be briefly explaining about these topics daywise and I'll be cataloging my sail of these 5 days workshop.
@@ -6,7 +8,7 @@ VSD Sky130 RTL was a five day workshop where I have learnt about the open source
 ![image](https://user-images.githubusercontent.com/60011091/119861437-04d26000-bf35-11eb-9515-85b05a1788d5.png)  ![image](https://user-images.githubusercontent.com/60011091/119867192-4108bf00-bf3b-11eb-9e46-4544afc0c9fa.png)
 
 
-# DAY 1-  Verilog RTL Simulation, Synthesis and Design 
+# DAY1- Verilog RTL Simulation, Synthesis and Design 
 
 ## RTL Simulation  
 
@@ -35,8 +37,7 @@ The above image shows the flow of iverilog simulator whose inputs consist of des
 In this image we see that the output file of iverilog that is our vcd file is sent as input to gtk wave which is a vcd waveform viewer where we can check the correctness of a particular design logic which can be a simple or a complex circuit or can be a combinational or sequential circuit designs.
 
 
-##LAB1- Setting up the Lab 
-
+## LAB1- Setting up the Lab 
 
 Here I'll be covering how we are going to setup our lab server to simulate, view and synthesis the given specification of a design.
 
@@ -89,9 +90,12 @@ In this lab iverilog was used as simulator and gtkwave for vcd waveform viewer
 ![Capture_3](https://user-images.githubusercontent.com/60011091/119987033-31908100-bfe2-11eb-97f7-bdfe3a660f1e.JPG)
 ![Capture_4](https://user-images.githubusercontent.com/60011091/119987040-33f2db00-bfe2-11eb-85b1-ddd24472d0d4.JPG)
 
-These images demonstrates how iverilog was used for simulating design code good_mux .v along with testbench tb_good_mux.v and how we view the vcd format file using gtkwave. The final image shows how the design and testbench files are viewed using gedit command
+These images demonstrates how iverilog was used for simulating design code good_mux .v along with testbench tb_good_mux.v and how we view the vcd format file using gtkwave. The final image shows how the design and testbench files are viewed using gedit command.
 
-##RTL Synthesis
+## Note: The testbench and the design code can be passed using iverilog command in any order. In the above example we can give iverilog good_mux.v tb_good_mux.v or as  
+iverilog tb_good_mux.v good_mux.v
+
+## RTL Synthesizer and Logic synthesis
 
 Synthesizer is a tool to convert RTL Code to netlist. Yosys is the synthesizer used in the workshop. 
 
@@ -100,7 +104,7 @@ Synthesizer is a tool to convert RTL Code to netlist. Yosys is the synthesizer u
 
 ![image](https://user-images.githubusercontent.com/60011091/119988024-47eb0c80-bfe3-11eb-8588-06ecbeaab580.png)
 
-The above image shows the flow of yosys.
+The above image shows the flow of yosys. Yosys takes RTL code and .lib files as input and netlist as output. Netlist is the standard cell representation of the design.
 
 From the above image, we use read_verilog to read the design code, read_liberty to read .lib files and finally write_verilog for generating netlist 
 
@@ -109,6 +113,33 @@ We use the very same iverilog flow to verify the synthesis of the design as show
 ![image](https://user-images.githubusercontent.com/60011091/119989215-8d5c0980-bfe4-11eb-929d-729060574939.png)
 
 During the synthesis of netlist verification, the output should be same as that of what what we did in iverilog lab. For synthesis of netlist we will be using the same testbench as used in iverilog and gtkwave lab.
+
+RTL Design is the behavioral representation of the needed specifications.
+
+In Logic synthesis, RTL code is converted to gate level translation and so the connections are made with the gates and finally it's taken out as netlist.
+
+## .Lib files
+These are collection of logic modules which consists of basic gates like and, or, not etc and can have different flavors for the same gate.
+
+## Why do we have diiferent flavors of basic gates?
+
+In the logic path, combinational delay determines the maximum speed of operation of digital logic circuits.
+
+![image](https://user-images.githubusercontent.com/60011091/119996267-2b070700-bfec-11eb-9a6e-53f8e29f236e.png)
+![image](https://user-images.githubusercontent.com/60011091/119998864-c0a39600-bfee-11eb-8908-761776245f1c.png)
+
+
+The above images describes the clock cycle process and how it can be calculated. We need faster cell lib for faster clock speed and setup time. But we need slower cells to avoid hold time issues. Collection of fast cells and slow cells form the .lib.
+
+## Faster Cells versus Slower Cells
+
+![image](https://user-images.githubusercontent.com/60011091/119999359-49bacd00-bfef-11eb-9492-a8f6eedc84f5.png)
+
+
+
+
+
+
 
 
 
