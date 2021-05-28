@@ -13,6 +13,9 @@ VSD Sky130 RTL was a five day workshop where I have learnt about the open source
 ## RTL Simulation  
 
 ![image](https://user-images.githubusercontent.com/60011091/119868845-318a7580-bf3d-11eb-816c-7fef5d3e4eb0.png) 
+
+![Untitled Workspace (1)](https://user-images.githubusercontent.com/60011091/120014223-6eb73c00-bfff-11eb-8ba8-080a895ecea8.png)
+
 ![image](https://user-images.githubusercontent.com/60011091/119868918-46670900-bf3d-11eb-8873-ab8074c8f015.png)
 
 
@@ -20,21 +23,18 @@ Simulator is a tool for examining the correctness of your design. RTL design is 
 
 Design can be an actual code or set of Verilog code whose functional intention is to meet a required specification and it should be a synthesizable verilog code. Design may have one or more  primary inputs and primary outputs depending on the design specifications.
 
-![image](https://user-images.githubusercontent.com/60011091/119873702-6ea53680-bf42-11eb-9911-739fc9634018.png)
 
 
 Testbench is an another verilog file which consists of instantiation of the top level module of a given design and it doesn't necessarily needed to be synthesizable code. But testbench doesn't really have primary inputs or any primary outputs.
 
-![image](https://user-images.githubusercontent.com/60011091/119873898-ac09c400-bf42-11eb-955b-cf40b0a4b9bc.png)
+
+![Untitled Workspace](https://user-images.githubusercontent.com/60011091/120012023-948f1180-bffc-11eb-9821-b828b086ce18.png)
 
 
-![image](https://user-images.githubusercontent.com/60011091/119874652-7a452d00-bf43-11eb-904b-fc77dab90a3e.png)
 
 The above image shows the flow of iverilog simulator whose inputs consist of design files and testbenches of the design and the value change dump (vcd) file is our output file.
 
-![image](https://user-images.githubusercontent.com/60011091/119875139-0c4d3580-bf44-11eb-828d-fc0c7871261d.png)
-
-In this image we see that the output file of iverilog that is our vcd file is sent as input to gtk wave which is a vcd waveform viewer where we can check the correctness of a particular design logic which can be a simple or a complex circuit or can be a combinational or sequential circuit designs.
+In the very same image we see that the output file of iverilog that is our vcd file is sent as input to gtk wave which is a vcd waveform viewer where we can check the correctness of a particular design logic which can be a simple or a complex circuit or can be a combinational or sequential circuit designs.
 
 
 ## LAB1- Setting up the Lab 
@@ -108,9 +108,8 @@ The above image shows the flow of yosys. Yosys takes RTL code and .lib files as 
 
 From the above image, we use read_verilog to read the design code, read_liberty to read .lib files and finally write_verilog for generating netlist 
 
-We use the very same iverilog flow to verify the synthesis of the design as shown below.
+We use the very same iverilog flow to verify the synthesis of the design as we did in iverilog lab section.
 
-![image](https://user-images.githubusercontent.com/60011091/119989215-8d5c0980-bfe4-11eb-929d-729060574939.png)
 
 During the synthesis of netlist verification, the output should be same as that of what what we did in iverilog lab. For synthesis of netlist we will be using the same testbench as used in iverilog and gtkwave lab.
 
