@@ -6,9 +6,9 @@ VSD Sky130 RTL was a five day workshop where I have learnt about the open source
 ![image](https://user-images.githubusercontent.com/60011091/119861437-04d26000-bf35-11eb-9515-85b05a1788d5.png)  ![image](https://user-images.githubusercontent.com/60011091/119867192-4108bf00-bf3b-11eb-9e46-4544afc0c9fa.png)
 
 
-# DAY 1-  Verilog RTL design and Synthesis 
+# DAY 1-  Verilog RTL Simulation, Synthesis and Design 
 
-## RTL Simulation and Synthesis  
+## RTL Simulation  
 
 ![image](https://user-images.githubusercontent.com/60011091/119868845-318a7580-bf3d-11eb-816c-7fef5d3e4eb0.png) 
 ![image](https://user-images.githubusercontent.com/60011091/119868918-46670900-bf3d-11eb-8873-ab8074c8f015.png)
@@ -35,10 +35,10 @@ The above image shows the flow of iverilog simulator whose inputs consist of des
 In this image we see that the output file of iverilog that is our vcd file is sent as input to gtk wave which is a vcd waveform viewer where we can check the correctness of a particular design logic which can be a simple or a complex circuit or can be a combinational or sequential circuit designs.
 
 
-## Setting up the Lab 
+##LAB1- Setting up the Lab 
 
 
-Here I'll be covering how we are going setup our lab server to simulate, view and synthesis the given specification of a design.
+Here I'll be covering how we are going to setup our lab server to simulate, view and synthesis the given specification of a design.
 
 Initially we will be creating a VLSI directory using mkdir VLSI and then we cd into the directory using cd VLSI as shown below
 
@@ -46,7 +46,82 @@ Initially we will be creating a VLSI directory using mkdir VLSI and then we cd i
 
 Here we use ls commmand to list out all the files in that particular directory as shown in the above image. 
 
-Before git cloning any repository in linux platform we can use sudo -i to enter root folder or by directly cloning that particular repository to the present folder and then we need to check whether git package is already installed if not install it using sudo apt-get install git
+Before git cloning any repository in linux platform we can use sudo -i to enter root directory or by directly cloning that particular repository to the present folder and then we need to check whether git package is already installed if not install it using sudo apt-get install git.
+
+Now that the  prerequisites of git cloning are done we need to start cloning vsdflow repository and sky130 RTL Design and Synthesis Workshop for this workshop.
+
+VSDFLOW repository can be cloned by git clone https://github.com/kunalg123/vsdflow.git
+
+![image](https://user-images.githubusercontent.com/60011091/119933860-801e2b00-bfa2-11eb-840f-f84961891174.png)
+
+This image shows the contents of vsdflow directory after cloning its repository.
+
+After the command ./opensource_eda_tool_install.sh is executed, a list of open source tools which get installed are:
+a) Yosys is RTL Synthesis tool
+b) blifFanout is a high fanout net synthesis tool.
+c) graywolf is a tool used specifically for placement phase 
+d) qrouter is used as a tool for  detailed routing of the design
+e) magic is a tool to extract GDSII layout file as well as carries out DRC and Antenna checks.
+f) netgen is a tool for checking Lsyout vs Schematic for a given design
+g) OpenTimer & OpenSTA are STA (Static timing analysis) tools
+
+sky130 RTL Design and Synthesis Workshop can be cloned by 
+![image](https://user-images.githubusercontent.com/60011091/119934398-5a455600-bfa3-11eb-940b-284ad3037d96.png)
+
+
+This image displays all the contents of sky130 RTL Design and Synthesis Workshop directory in a detailed fashion.
+
+![image](https://user-images.githubusercontent.com/60011091/119973629-5b8d7780-bfd1-11eb-8b1f-80c757205c5e.png)
+
+![image](https://user-images.githubusercontent.com/60011091/119974182-03a34080-bfd2-11eb-9eb7-d86c0487c58a.png)
+
+These two images displays all the subfolders of  my_lib, lib and verilog files in the sky130 RTL Design and Synthesis Workshop directory
+
+
+## LAB2- iverilog and gtkwave introduction lab
+
+In this lab iverilog was used as simulator and gtkwave for vcd waveform viewer
+
+![Capture](https://user-images.githubusercontent.com/60011091/119986983-23dafb80-bfe2-11eb-9fe8-dcce9e1e009b.JPG)
+
+![Capture_1](https://user-images.githubusercontent.com/60011091/119987012-2b9aa000-bfe2-11eb-875c-d1b7e16bb6fe.JPG)
+![Capture_2](https://user-images.githubusercontent.com/60011091/119987022-2e959080-bfe2-11eb-987b-313208d6b607.JPG)
+![Capture_3](https://user-images.githubusercontent.com/60011091/119987033-31908100-bfe2-11eb-97f7-bdfe3a660f1e.JPG)
+![Capture_4](https://user-images.githubusercontent.com/60011091/119987040-33f2db00-bfe2-11eb-85b1-ddd24472d0d4.JPG)
+
+These images demonstrates how iverilog was used for simulating design code good_mux .v along with testbench tb_good_mux.v and how we view the vcd format file using gtkwave. The final image shows how the design and testbench files are viewed using gedit command
+
+##RTL Synthesis
+
+Synthesizer is a tool to convert RTL Code to netlist. Yosys is the synthesizer used in the workshop. 
+
+![download (1)](https://user-images.githubusercontent.com/60011091/119988279-8bde1180-bfe3-11eb-9cba-d385700603a2.png)
+
+
+![image](https://user-images.githubusercontent.com/60011091/119988024-47eb0c80-bfe3-11eb-8588-06ecbeaab580.png)
+
+The above image shows the flow of yosys.
+
+From the above image, we use read_verilog to read the design code, read_liberty to read .lib files and finally write_verilog for generating netlist 
+
+We use the very same iverilog flow to verify the synthesis of the design as shown below.
+
+![image](https://user-images.githubusercontent.com/60011091/119989215-8d5c0980-bfe4-11eb-929d-729060574939.png)
+
+During the synthesis of netlist verification, the output should be same as that of what what we did in iverilog lab. For synthesis of netlist we will be using the same testbench as used in iverilog and gtkwave lab.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
