@@ -97,7 +97,7 @@ iverilog tb_good_mux.v good_mux.v
 
 ## RTL Synthesizer and Logic synthesis
 
-Synthesizer is a tool to convert RTL Code to netlist. Yosys is the synthesizer used in the workshop. 
+Synthesizer is a tool to convert RTL Code to netlist. Yosys is the synthesizer used in the workshop. Constraints are the guidance offered to the synthesizers.
 
 ![download (1)](https://user-images.githubusercontent.com/60011091/119988279-8bde1180-bfe3-11eb-9cba-d385700603a2.png)
 
@@ -126,6 +126,7 @@ These are collection of logic modules which consists of basic gates like and, or
 In the logic path, combinational delay determines the maximum speed of operation of digital logic circuits.
 
 ![image](https://user-images.githubusercontent.com/60011091/119996267-2b070700-bfec-11eb-9a6e-53f8e29f236e.png)
+
 ![image](https://user-images.githubusercontent.com/60011091/119998864-c0a39600-bfee-11eb-8908-761776245f1c.png)
 
 
@@ -133,7 +134,19 @@ The above images describes the clock cycle process and how it can be calculated.
 
 ## Faster Cells versus Slower Cells
 
-![image](https://user-images.githubusercontent.com/60011091/119999359-49bacd00-bfef-11eb-9492-a8f6eedc84f5.png)
+
+
+The output loads in digital circuits are mostly capacitive loads.
+When charging or discharging of capacitance is faster, the cells have lesser delays for this to happen we need transistor capable of sourcing more current.
+
+Faster cells has a tradeoff in power and area even though it has lesser delays for a given design.
+
+Wider transistors has low delays but greater power and area for a given design specifications. On the other hand narrower transistors has high delays but lesser powe and area from the same design specifications.
+
+
+
+
+
 
 
 
