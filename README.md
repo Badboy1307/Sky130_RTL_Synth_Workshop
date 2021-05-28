@@ -135,7 +135,6 @@ The above images describes the clock cycle process and how it can be calculated.
 ## Faster Cells versus Slower Cells
 
 
-
 The output loads in digital circuits are mostly capacitive loads.
 When charging or discharging of capacitance is faster, the cells have lesser delays for this to happen we need transistor capable of sourcing more current.
 
@@ -143,10 +142,27 @@ Faster cells has a tradeoff in power and area even though it has lesser delays f
 
 Wider transistors has low delays but greater power and area for a given design specifications. On the other hand narrower transistors has high delays but lesser powe and area from the same design specifications.
 
+## Yosys introduction lab 
+
+![Capture5](https://user-images.githubusercontent.com/60011091/120017907-0fa7f600-c004-11eb-897b-6bbe22ec4d35.JPG)
+
+![Capture6](https://user-images.githubusercontent.com/60011091/120019417-0d469b80-c006-11eb-9e22-26c943b2fb59.JPG)
+
+![Capture7](https://user-images.githubusercontent.com/60011091/120019809-8219d580-c006-11eb-8998-f876fe49907e.JPG)
+
+![Capture8](https://user-images.githubusercontent.com/60011091/120020022-ce651580-c006-11eb-9591-7c2ba233c6b9.JPG)
+
+![Capture9](https://user-images.githubusercontent.com/60011091/120020131-f3598880-c006-11eb-9742-f6c6c835e7bd.JPG)
+
+![Capture10](https://user-images.githubusercontent.com/60011091/120021034-2c462d00-c008-11eb-88be-e0dccef19b6f.JPG)
+
+![Capture11](https://user-images.githubusercontent.com/60011091/120021160-526bcd00-c008-11eb-880c-af66a429ae95.JPG)
 
 
+![Capture12](https://user-images.githubusercontent.com/60011091/120021523-cc03bb00-c008-11eb-97f0-eac9dbb78b88.JPG)
 
 
+sky130_fd_sc_hd__o21ai_1 in netlist visualization has 3 inputs and 1 output as it has 2 input OR  gate into first input of 2input NAND gate. sky130_fd_sc_hd is a high density digital standard cell contributed Skywater foundry.
 
 
 
