@@ -165,13 +165,111 @@ Wider transistors has low delays but greater power and area for a given design s
 sky130_fd_sc_hd__o21ai_1 in netlist visualization has 3 inputs and 1 output as it has 2 input OR  gate into first input of 2input NAND gate. sky130_fd_sc_hd is a high density digital standard cell contributed Skywater foundry.
 
 
+## Day-2 Timing libs , Hierarchy vs flat synthesis and efficient flop styles
+
+# .lib file lab 
+![Capture13](https://user-images.githubusercontent.com/60011091/120023408-5c42ff80-c00b-11eb-9695-e9d3daf567db.JPG)
+
+![Capture14](https://user-images.githubusercontent.com/60011091/120023428-62d17700-c00b-11eb-9f33-de5ab2ef58a3.JPG)
+
+![Capture15](https://user-images.githubusercontent.com/60011091/120023495-7aa8fb00-c00b-11eb-960e-ab05706f992b.JPG)
+
+sky130_fd_sc_hd__tt_025c_1v80.lib --> has 025c as temperature parameter, 1v80 as voltage parameter and tt which is a typical process parameter.
+
+![Capture18](https://user-images.githubusercontent.com/60011091/120025121-d83e4700-c00d-11eb-8e61-636ed6b56637.JPG)
+
+
+# Hierarchy vs flat Synthesis lab 
+
+Hierarchy Synthesis
+
+![Capture16](https://user-images.githubusercontent.com/60011091/120024686-2ef75100-c00d-11eb-98bc-2082e617716f.JPG)
+
+![Capture17](https://user-images.githubusercontent.com/60011091/120024695-30c11480-c00d-11eb-9893-60a9777b6f6d.JPG)
+
+![Capture19](https://user-images.githubusercontent.com/60011091/120025454-526ecb80-c00e-11eb-9062-72e7be2122c8.JPG)
+
+![Capture20](https://user-images.githubusercontent.com/60011091/120025621-9792fd80-c00e-11eb-9f28-ec621cad920f.JPG)
+
+![Capture21](https://user-images.githubusercontent.com/60011091/120025794-d6c14e80-c00e-11eb-88f9-8d5bc2e02420.JPG)
+
+![Capture22](https://user-images.githubusercontent.com/60011091/120025891-f48eb380-c00e-11eb-9464-2859ee503b48.JPG)
+
+
+![Capture23](https://user-images.githubusercontent.com/60011091/120026094-30c21400-c00f-11eb-9cba-28fe3515c2cd.JPG)
+
+
+![Capture24](https://user-images.githubusercontent.com/60011091/120026330-8ac2d980-c00f-11eb-9822-41a2a49d049e.JPG)
+
+![Capture26](https://user-images.githubusercontent.com/60011091/120027056-8945e100-c010-11eb-90be-0430255b4d53.JPG)
+
+Flat Synthesis 
+
+![Capture27](https://user-images.githubusercontent.com/60011091/120027495-0e30fa80-c011-11eb-9812-65ac466afb91.JPG)
+
+![Capture28](https://user-images.githubusercontent.com/60011091/120027691-4fc1a580-c011-11eb-8bb7-1f36dd655bbf.JPG)
+
+Submodules
+
+![Capture29](https://user-images.githubusercontent.com/60011091/120028253-1178b600-c012-11eb-8b6f-70770b408aed.JPG)
+
+![Capture30](https://user-images.githubusercontent.com/60011091/120028309-25241c80-c012-11eb-905a-b8b2d2a14be0.JPG)
+
+![Capture31](https://user-images.githubusercontent.com/60011091/120028566-76341080-c012-11eb-9ccf-0748ec1895ba.JPG)
+
+![Capture32](https://user-images.githubusercontent.com/60011091/120028549-703e2f80-c012-11eb-9e4f-d255969134d5.JPG)
 
 
 
+# Why Flops and Flops Designs 
+
+![image](https://user-images.githubusercontent.com/60011091/120029004-1db14300-c013-11eb-9a98-e2900ac64a09.png)
+
+The above image shows the comparison Asynchronous reset, Asynchronous set , Synchronous reset and Synchronous reset.
 
 
+# Lab for Flop styles
+
+Using Simulator and Waveform viewer
+
+Asynchronous reset
+
+![Capture34](https://user-images.githubusercontent.com/60011091/120029558-e727f800-c013-11eb-9a8e-2e69f1e86435.JPG)
+
+![Capture35](https://user-images.githubusercontent.com/60011091/120029806-35d59200-c014-11eb-9056-f23897ae7033.JPG)
+
+Asynchronous set
+
+![Capture36](https://user-images.githubusercontent.com/60011091/120030107-a7154500-c014-11eb-9c81-65c59975dda8.JPG)
+
+![Capture37](https://user-images.githubusercontent.com/60011091/120030248-da57d400-c014-11eb-8e0d-5fa73442be08.JPG)
 
 
+Synchronous reset
+
+![Capture38](https://user-images.githubusercontent.com/60011091/120030551-3e7a9800-c015-11eb-8018-7beaaf449fbe.JPG)
+
+![Capture39](https://user-images.githubusercontent.com/60011091/120030736-7681db00-c015-11eb-9e40-1346fcf12382.JPG)
+![Capture39](https://user-images.githubusercontent.com/60011091/120031140-07f14d00-c016-11eb-972e-d4290d765d93.JPG)
+
+Using Synthesizer for Asynchronous reset
+
+
+![Capture40](https://user-images.githubusercontent.com/60011091/120031276-396a1880-c016-11eb-8f0e-2e77df970772.JPG)
+
+![Capture42](https://user-images.githubusercontent.com/60011091/120031373-5999d780-c016-11eb-9ee7-169938a1988e.JPG)
+
+
+![Capture41](https://user-images.githubusercontent.com/60011091/120031223-26efdf00-c016-11eb-969c-f911f6101c66.JPG)
+
+![Capture42](https://user-images.githubusercontent.com/60011091/120031791-e349a500-c016-11eb-93af-460837e1db61.JPG)
+
+![Capture43](https://user-images.githubusercontent.com/60011091/120031797-e5abff00-c016-11eb-8a98-ce60607a1bd5.JPG)
+
+![Capture44](https://user-images.githubusercontent.com/60011091/120031970-27d54080-c017-11eb-96b3-b5f9f030a33d.JPG)
+
+
+![Capture45](https://user-images.githubusercontent.com/60011091/120032098-52bf9480-c017-11eb-8104-3f7e8c9ed2ea.JPG)
 
 
 
