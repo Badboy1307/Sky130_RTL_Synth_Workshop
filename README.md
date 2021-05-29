@@ -44,23 +44,33 @@ In the very same image we see that the output file of iverilog that is our vcd f
 
 ### LAB1- Setting up the Lab 
 
-Here I'll be covering how we are going to setup our lab server to simulate, view and synthesis the given specification of a design.
+Here I will be covering how we are going to setup our lab server to simulate, view and synthesis the given specification of a design.
 
 Initially we will be creating a VLSI directory using mkdir VLSI and then we cd into the directory using cd VLSI as shown below
 
 
+              $ mkdir VLSI
+              $ cd VLSI
+              $ ls
+
 ![image](https://user-images.githubusercontent.com/60011091/119877385-98f8f300-bf46-11eb-8ece-f88d6dcbdde4.png)
+                   
+                   $ mkdir VLSI
+                   $ cd VLSI
+                   $ ls
 
-
-Here we use ls commmand to list out all the files in that particular directory as shown in the above image. 
+Here we use ls command to list out all the files in that particular directory as shown in the above image. 
 
 
 Before git cloning any repository in linux platform we can use sudo -i to enter root directory or by directly cloning that particular repository to the present folder and then we need to check whether git package is already installed if not install it using sudo apt-get install git.
 
 Now that the  prerequisites of git cloning are done we need to start cloning vsdflow repository and sky130 RTL Design and Synthesis Workshop for this workshop.
 
-VSDFLOW repository can be cloned by git clone https://github.com/kunalg123/vsdflow.git
-
+VSDFLOW repository can be cloned by git clone
+                               
+                               $ https://github.com/kunalg123/vsdflow.git
+                               $ cd vsdflow
+                               $  ls -ltr
 
 ![image](https://user-images.githubusercontent.com/60011091/119933860-801e2b00-bfa2-11eb-840f-f84961891174.png)
 
@@ -79,13 +89,29 @@ g) OpenTimer & OpenSTA are STA (Static timing analysis) tools
 
 sky130 RTL Design and Synthesis Workshop can be cloned by 
 
+
+                                  $ https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+                                  $ cd sky130RTLDesignAndSynthesisWorkshop
+                                  $ ls -ltr 
+                                  
+
 ![image](https://user-images.githubusercontent.com/60011091/119934398-5a455600-bfa3-11eb-940b-284ad3037d96.png)
 
 
 This image displays all the contents of sky130 RTL Design and Synthesis Workshop directory in a detailed fashion.
 
+                                   $ cd my_lib 
+                                   $ ls
+                                   $ cd lib 
+                                   $ ls 
+                                   $ cd verilog_models
+                                   $ ls
+  
+
 ![image](https://user-images.githubusercontent.com/60011091/119973629-5b8d7780-bfd1-11eb-8b1f-80c757205c5e.png)
 
+
+                                    
 
 ![image](https://user-images.githubusercontent.com/60011091/119974182-03a34080-bfd2-11eb-9eb7-d86c0487c58a.png)
 
@@ -96,6 +122,8 @@ These two images displays all the subfolders of  my_lib, lib and verilog files i
 ### LAB2- iverilog and gtkwave introduction lab
 
 In this lab iverilog was used as simulator and gtkwave for vcd waveform viewer
+
+
 
 ![Capture](https://user-images.githubusercontent.com/60011091/119986983-23dafb80-bfe2-11eb-9fe8-dcce9e1e009b.JPG)
 
