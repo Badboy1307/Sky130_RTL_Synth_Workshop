@@ -272,13 +272,45 @@ Using Synthesizer for Asynchronous reset
 ![Capture45](https://user-images.githubusercontent.com/60011091/120032098-52bf9480-c017-11eb-8104-3f7e8c9ed2ea.JPG)
 
 
+#Interesting Optimizations
+
+![Capture46](https://user-images.githubusercontent.com/60011091/120056558-b323f580-c05a-11eb-8dfc-070a2d07193a.JPG)
+
+
+![Capture47](https://user-images.githubusercontent.com/60011091/120056581-d2bb1e00-c05a-11eb-80c6-a98560b97fd6.JPG)
+
+
+![Capture48](https://user-images.githubusercontent.com/60011091/120056613-0433e980-c05b-11eb-954d-49ea21be1ea4.JPG)
+
+
+Synthesis 
+
+![Capture49](https://user-images.githubusercontent.com/60011091/120056712-b370c080-c05b-11eb-9510-8b7c29d53e4c.JPG)
+
+
+![Capture50](https://user-images.githubusercontent.com/60011091/120056780-12363a00-c05c-11eb-84a5-dcd8631ab7f2.JPG)
+
+
+![Capture51](https://user-images.githubusercontent.com/60011091/120056796-2aa65480-c05c-11eb-9459-5df27bb118a8.JPG)
 
 
 
+![Capture52](https://user-images.githubusercontent.com/60011091/120056840-5e817a00-c05c-11eb-83b7-ae71f8596c17.JPG)
 
 
+Design 
+
+![Capture53](https://user-images.githubusercontent.com/60011091/120056868-8c66be80-c05c-11eb-9c52-944f50cd174d.JPG)
 
 
+## Day-3 Combinational and Sequential Optimizations
+
+# Combinational  Optimizations
+Logics are squeezed to obtain the most optimized design in terms of Area, Power savings
+
+# Methods for Combinational  Optimizations
+1) Constant propagation (direct optimization)
+2) Boolean Logic Optimization (K map, Quine McKluskey)
 
 
 
