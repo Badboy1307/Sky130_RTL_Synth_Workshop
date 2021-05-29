@@ -104,8 +104,8 @@ In this lab iverilog was used as simulator and gtkwave for vcd waveform viewer
 
 These images demonstrates how iverilog was used for simulating design code good_mux .v along with testbench tb_good_mux.v and how we view the vcd format file using gtkwave. The final image shows how the design and testbench files are viewed using gedit command.
 
-## Note: The testbench and the design code can be passed using iverilog command in any order. In the above example we can give iverilog good_mux.v tb_good_mux.v or as  
-iverilog tb_good_mux.v good_mux.v
+## Note: The testbench and the design code can be passed using iverilog command in any order. In the above example we can give iverilog good_mux.v tb_good_mux.v or as  iverilog tb_good_mux.v good_mux.v
+
 
 ## RTL Synthesizer and Logic synthesis
 
@@ -363,18 +363,153 @@ Design
 
 ## Day-3 Combinational and Sequential Optimizations
 
+
 # Combinational  Optimizations
+
 
 Logics are squeezed to obtain the most optimized design in terms of Area, Power savings
 
+
+
 # Methods for Combinational  Optimizations
 
-1) Constant propagation (direct optimization)
-2) Boolean Logic Optimization (K map, Quine McKluskey)
+
+1) Constant propagation 
+-Direct optimization
+
+We will be taking an example, Y= ((AB)+ C)'.
+
+If we take A=0 as input, we get Y= C'
+So, clearly we see that we directly need inverter to invert input C.
+
+
+2) Boolean Logic Optimization 
+
+-K map 
+-Quine McKluskey
+
+Here we take an example, assign y= a?(b?c:(c?a:0)):!c), this statement uses  ternary operator and this one is a mux kind of expression.
+If a=1, it will take b?c:(c?a:0) expression or else a=0 it will take !c as the expression.
+If b=1, it will take c's value or else b=0 it will take c?a:0 expression.
+if c=1, it will take a's value or else c=0 it will take the value as '0'. 
+
+The overall MUX expression will be Y=  ((ac+c'0). b'+bc).a+ a'c'    (Since c'.0=0)
+                                  Y=  ((acb'+bc).a + a'c'
+                                   Y= a'c' +acb'+abc 
+                                   Y= a'c' +ac(b'+b)     (b'+b=1)
+                                   Y= a'c + ac ie Y= a xor c
+                                   
+                                   
+                                   
+# Sequential Optimizations
+
+
+# Methods for Sequential  Optimizations
+
+1) Basic
+ 
+-Sequential constant propagation
+
+![image](https://user-images.githubusercontent.com/60011091/120060768-3c492580-c077-11eb-9e6c-eea9e2ae383f.png)
+
+Here in this circuit even if there is a reset or not the Q value value is going to be 0. So Y value is always 1 as it has nand gate inverting the value of Q.
+
+2)Advanced  
+-State optimization ( optimization of unused states)
+-Retiming (Splitting the logic more equally to get a better effective frequency for a sequential circuit)
+-Sequential Logic cloning (floor plan aware synthesis)
+
+
+# Lab for Combinational  Optimizations
+
+![Capture54](https://user-images.githubusercontent.com/60011091/120061083-145ac180-c079-11eb-9c58-5a438ee40fad.JPG)
+
+Here we will be taking first file opt_check module where we have assign y= a?b:0, which is a mux so at a=1, y will take b's values, but at a=0, y will take 0 as its value.
+
+![Capture56](https://user-images.githubusercontent.com/60011091/120061922-16bf1a80-c07d-11eb-9cac-3dbd5890260b.JPG)
+
+![Capture57](https://user-images.githubusercontent.com/60011091/120061957-3d7d5100-c07d-11eb-85ff-f6d3433e536a.JPG)
+
+![Capture58](https://user-images.githubusercontent.com/60011091/120062013-7f0dfc00-c07d-11eb-97b4-759317a69240.JPG)
+
+![Capture59](https://user-images.githubusercontent.com/60011091/120062043-a1077e80-c07d-11eb-9f5b-a41d7f00e3b9.JPG)
+
+![Capture60](https://user-images.githubusercontent.com/60011091/120062096-e1ff9300-c07d-11eb-8b08-2368fcff286b.JPG)
 
 
 
+Here we will be taking second file opt_check2 module where we have assign y= a?1;b, which is a mux so at a=1, y will take 1, but at a=0, y will take b's value.
 
+![Capture61](https://user-images.githubusercontent.com/60011091/120062648-e37e8a80-c080-11eb-8cfa-82775f19018b.JPG)
+
+![Capture62](https://user-images.githubusercontent.com/60011091/120062740-3eb07d00-c081-11eb-86a2-8b3c9eb6d430.JPG)
+
+![Capture63](https://user-images.githubusercontent.com/60011091/120062756-51c34d00-c081-11eb-9d17-5c5141baff12.JPG)
+
+![Capture64](https://user-images.githubusercontent.com/60011091/120062784-8505dc00-c081-11eb-94e4-c2b8b91cce40.JPG)
+
+
+
+# Lab for Sequential Optimizations
+
+![Capture65](https://user-images.githubusercontent.com/60011091/120063008-af0bce00-c082-11eb-8421-ce3623d80f16.JPG)
+
+![Capture65](https://user-images.githubusercontent.com/60011091/120063135-5be64b00-c083-11eb-962c-8b8fa0067b9e.JPG)
+
+![Capture66](https://user-images.githubusercontent.com/60011091/120063162-75879280-c083-11eb-884f-e3f4e6520d00.JPG)
+
+![Capture67](https://user-images.githubusercontent.com/60011091/120063291-0a8a8b80-c084-11eb-9b40-2c187432abab.JPG)
+
+![Capture68](https://user-images.githubusercontent.com/60011091/120063462-e8453d80-c084-11eb-88a5-2b511f59acec.JPG)
+
+
+
+dff_const1
+
+
+![Capture69](https://user-images.githubusercontent.com/60011091/120063891-1592eb00-c087-11eb-8550-7be69f41940a.JPG)
+
+![image](https://user-images.githubusercontent.com/60011091/120063938-5854c300-c087-11eb-88a0-843af2713ad9.png)
+
+
+Synthesis
+
+
+![Capture71](https://user-images.githubusercontent.com/60011091/120064324-28a6ba80-c089-11eb-8125-353dab4c3d9d.JPG)
+
+![Capture72](https://user-images.githubusercontent.com/60011091/120064398-8dfaab80-c089-11eb-9730-c77d5c3c2f1c.JPG)
+
+![Capture73](https://user-images.githubusercontent.com/60011091/120064463-e5008080-c089-11eb-95a2-ccb329020724.JPG)
+
+![Capture74](https://user-images.githubusercontent.com/60011091/120064499-0fead480-c08a-11eb-9c30-0618d420e1c1.JPG)
+![Capture75](https://user-images.githubusercontent.com/60011091/120064527-3e68af80-c08a-11eb-8407-2d62f450cb8e.JPG)
+
+
+dff_const2
+![Capture76](https://user-images.githubusercontent.com/60011091/120064872-14b08800-c08c-11eb-9468-8deca70722e9.JPG)
+
+
+![Capture77](https://user-images.githubusercontent.com/60011091/120064869-0ebaa700-c08c-11eb-9ede-15414dc67fb9.JPG)
+
+![Capture78](https://user-images.githubusercontent.com/60011091/120064937-7a9d0f80-c08c-11eb-87b2-e59ecd7ad426.JPG)
+
+
+
+# Lab for Sequential Optimizations for unused inputs
+
+![Capture79](https://user-images.githubusercontent.com/60011091/120065562-80482480-c08f-11eb-9bf1-2034ab11bd58.JPG)
+
+![Capture80](https://user-images.githubusercontent.com/60011091/120065611-c8674700-c08f-11eb-9266-8fdb62792f4c.JPG)
+
+![Capture81](https://user-images.githubusercontent.com/60011091/120065772-af12ca80-c090-11eb-8dbd-9e3ca2515f74.JPG)
+
+![Capture82](https://user-images.githubusercontent.com/60011091/120065851-1fb9e700-c091-11eb-82b8-71ce5a0eee99.JPG)
+
+![Capture83](https://user-images.githubusercontent.com/60011091/120065880-40823c80-c091-11eb-9fbf-256e002c2035.JPG)
+
+![Capture84](https://user-images.githubusercontent.com/60011091/120065916-6d365400-c091-11eb-9fa2-14b3c2f76655.JPG)
+
+![Capture85](https://user-images.githubusercontent.com/60011091/120065943-97881180-c091-11eb-93f0-edebfd1b5d30.JPG)
 
 
 
