@@ -8,9 +8,9 @@ VSD Sky130 RTL was a five day workshop where I have learnt about the open source
 ![image](https://user-images.githubusercontent.com/60011091/119861437-04d26000-bf35-11eb-9515-85b05a1788d5.png)  ![image](https://user-images.githubusercontent.com/60011091/119867192-4108bf00-bf3b-11eb-9e46-4544afc0c9fa.png)
 
 
-# DAY1- Verilog RTL Simulation, Synthesis and Design 
+## DAY1- Verilog RTL Simulation, Synthesis and Design 
 
-## RTL Simulation  
+### RTL Simulation  
 
 ![image](https://user-images.githubusercontent.com/60011091/119868845-318a7580-bf3d-11eb-816c-7fef5d3e4eb0.png) 
 
@@ -37,7 +37,7 @@ The above image shows the flow of iverilog simulator whose inputs consist of des
 In the very same image we see that the output file of iverilog that is our vcd file is sent as input to gtk wave which is a vcd waveform viewer where we can check the correctness of a particular design logic which can be a simple or a complex circuit or can be a combinational or sequential circuit designs.
 
 
-## LAB1- Setting up the Lab 
+### LAB1- Setting up the Lab 
 
 Here I'll be covering how we are going to setup our lab server to simulate, view and synthesis the given specification of a design.
 
@@ -88,7 +88,7 @@ This image displays all the contents of sky130 RTL Design and Synthesis Workshop
 These two images displays all the subfolders of  my_lib, lib and verilog files in the sky130 RTL Design and Synthesis Workshop directory
 
 
-## LAB2- iverilog and gtkwave introduction lab
+### LAB2- iverilog and gtkwave introduction lab
 
 In this lab iverilog was used as simulator and gtkwave for vcd waveform viewer
 
@@ -104,10 +104,10 @@ In this lab iverilog was used as simulator and gtkwave for vcd waveform viewer
 
 These images demonstrates how iverilog was used for simulating design code good_mux .v along with testbench tb_good_mux.v and how we view the vcd format file using gtkwave. The final image shows how the design and testbench files are viewed using gedit command.
 
-## Note: The testbench and the design code can be passed using iverilog command in any order. In the above example we can give iverilog good_mux.v tb_good_mux.v or as  iverilog tb_good_mux.v good_mux.v
+#### Note: The testbench and the design code can be passed using iverilog command in any order. In the above example we can give iverilog good_mux.v tb_good_mux.v or as  iverilog tb_good_mux.v good_mux.v
 
 
-## RTL Synthesizer and Logic synthesis
+### RTL Synthesizer and Logic synthesis
 
 Synthesizer is a tool to convert RTL Code to netlist. Yosys is the synthesizer used in the workshop. Constraints are the guidance offered to the synthesizers.
 
@@ -132,7 +132,7 @@ RTL Design is the behavioral representation of the needed specifications.
 
 In Logic synthesis, RTL code is converted to gate level translation and so the connections are made with the gates and finally it's taken out as netlist.
 
-## .Lib files
+### .Lib files
 These are collection of logic modules which consists of basic gates like and, or, not etc and can have different flavors for the same gate.
 
 ## Why do we have diiferent flavors of basic gates?
@@ -147,7 +147,7 @@ In the logic path, combinational delay determines the maximum speed of operation
 
 The above images describes the clock cycle process and how it can be calculated. We need faster cell lib for faster clock speed and setup time. But we need slower cells to avoid hold time issues. Collection of fast cells and slow cells form the .lib.
 
-## Faster Cells versus Slower Cells
+### Faster Cells versus Slower Cells
 
 
 The output loads in digital circuits are mostly capacitive loads.
@@ -157,7 +157,7 @@ Faster cells has a tradeoff in power and area even though it has lesser delays f
 
 Wider transistors has low delays but greater power and area for a given design specifications. On the other hand narrower transistors has high delays but lesser powe and area from the same design specifications.
 
-## Yosys introduction lab 
+### Yosys introduction lab 
 
 ![Capture5](https://user-images.githubusercontent.com/60011091/120017907-0fa7f600-c004-11eb-897b-6bbe22ec4d35.JPG)
 
@@ -189,7 +189,7 @@ sky130_fd_sc_hd__o21ai_1 in netlist visualization has 3 inputs and 1 output as i
 
 ## Day-2 Timing libs , Hierarchy vs flat synthesis and efficient flop styles
 
-# .lib file lab 
+### .lib file lab 
 ![Capture13](https://user-images.githubusercontent.com/60011091/120023408-5c42ff80-c00b-11eb-9695-e9d3daf567db.JPG)
 
 
@@ -205,7 +205,7 @@ sky130_fd_sc_hd__tt_025c_1v80.lib --> has 025c as temperature parameter, 1v80 as
 ![Capture18](https://user-images.githubusercontent.com/60011091/120025121-d83e4700-c00d-11eb-8e61-636ed6b56637.JPG)
 
 
-# Hierarchy vs flat Synthesis lab 
+### Hierarchy vs flat Synthesis lab 
 
 Hierarchy Synthesis
 
@@ -237,7 +237,7 @@ Hierarchy Synthesis
 ![Capture26](https://user-images.githubusercontent.com/60011091/120027056-8945e100-c010-11eb-90be-0430255b4d53.JPG)
 
 
-Flat Synthesis 
+#### Flat Synthesis 
 
 ![Capture27](https://user-images.githubusercontent.com/60011091/120027495-0e30fa80-c011-11eb-9812-65ac466afb91.JPG)
 
@@ -245,7 +245,7 @@ Flat Synthesis
 ![Capture28](https://user-images.githubusercontent.com/60011091/120027691-4fc1a580-c011-11eb-8bb7-1f36dd655bbf.JPG)
 
 
-Submodules
+#### Submodules
 
 
 ![Capture29](https://user-images.githubusercontent.com/60011091/120028253-1178b600-c012-11eb-8b6f-70770b408aed.JPG)
@@ -261,7 +261,7 @@ Submodules
 
 
 
-# Why Flops and Flops Designs 
+#### Why Flops and Flops Designs 
 
 
 ![image](https://user-images.githubusercontent.com/60011091/120029004-1db14300-c013-11eb-9a98-e2900ac64a09.png)
@@ -270,13 +270,13 @@ Submodules
 The above image shows the comparison Asynchronous reset, Asynchronous set , Synchronous reset and Synchronous reset.
 
 
-# Lab for Flop styles
+## Lab for Flop styles
 
 
 Using Simulator and Waveform viewer
 
 
-Asynchronous reset
+#### Asynchronous reset
 
 
 ![Capture34](https://user-images.githubusercontent.com/60011091/120029558-e727f800-c013-11eb-9a8e-2e69f1e86435.JPG)
@@ -285,7 +285,7 @@ Asynchronous reset
 ![Capture35](https://user-images.githubusercontent.com/60011091/120029806-35d59200-c014-11eb-9056-f23897ae7033.JPG)
 
 
-Asynchronous set
+#### Asynchronous set
 
 
 ![Capture36](https://user-images.githubusercontent.com/60011091/120030107-a7154500-c014-11eb-9c81-65c59975dda8.JPG)
@@ -294,7 +294,7 @@ Asynchronous set
 ![Capture37](https://user-images.githubusercontent.com/60011091/120030248-da57d400-c014-11eb-8e0d-5fa73442be08.JPG)
 
 
-Synchronous reset
+#### Synchronous reset
 
 
 ![Capture38](https://user-images.githubusercontent.com/60011091/120030551-3e7a9800-c015-11eb-8018-7beaaf449fbe.JPG)
@@ -303,7 +303,7 @@ Synchronous reset
 
 ![Capture39](https://user-images.githubusercontent.com/60011091/120031140-07f14d00-c016-11eb-972e-d4290d765d93.JPG)
 
-Using Synthesizer for Asynchronous reset
+#### Using Synthesizer for Asynchronous reset
 
 
 ![Capture40](https://user-images.githubusercontent.com/60011091/120031276-396a1880-c016-11eb-8f0e-2e77df970772.JPG)
@@ -327,7 +327,7 @@ Using Synthesizer for Asynchronous reset
 ![Capture45](https://user-images.githubusercontent.com/60011091/120032098-52bf9480-c017-11eb-8104-3f7e8c9ed2ea.JPG)
 
 
-#Interesting Optimizations
+### Interesting Optimizations
 
 
 ![Capture46](https://user-images.githubusercontent.com/60011091/120056558-b323f580-c05a-11eb-8dfc-070a2d07193a.JPG)
@@ -339,7 +339,7 @@ Using Synthesizer for Asynchronous reset
 ![Capture48](https://user-images.githubusercontent.com/60011091/120056613-0433e980-c05b-11eb-954d-49ea21be1ea4.JPG)
 
 
-Synthesis 
+#### Synthesis 
 
 
 ![Capture49](https://user-images.githubusercontent.com/60011091/120056712-b370c080-c05b-11eb-9510-8b7c29d53e4c.JPG)
@@ -355,7 +355,7 @@ Synthesis
 ![Capture52](https://user-images.githubusercontent.com/60011091/120056840-5e817a00-c05c-11eb-83b7-ae71f8596c17.JPG)
 
 
-Design 
+#### Design 
 
 
 ![Capture53](https://user-images.githubusercontent.com/60011091/120056868-8c66be80-c05c-11eb-9c52-944f50cd174d.JPG)
@@ -364,14 +364,14 @@ Design
 ## Day-3 Combinational and Sequential Optimizations
 
 
-# Combinational  Optimizations
+### Combinational  Optimizations
 
 
 Logics are squeezed to obtain the most optimized design in terms of Area, Power savings
 
 
 
-# Methods for Combinational  Optimizations
+### Methods for Combinational  Optimizations
 
 
 1) Constant propagation 
@@ -401,10 +401,10 @@ The overall MUX expression will be Y=  ((ac+c'0). b'+bc).a+ a'c'    (Since c'.0=
                                    
                                    
                                    
-# Sequential Optimizations
+### Sequential Optimizations
 
 
-# Methods for Sequential  Optimizations
+#### Methods for Sequential  Optimizations
 
 1) Basic
  
@@ -420,7 +420,7 @@ Here in this circuit even if there is a reset or not the Q value value is going 
 -Sequential Logic cloning (floor plan aware synthesis)
 
 
-# Lab for Combinational  Optimizations
+#### Lab for Combinational  Optimizations
 
 ![Capture54](https://user-images.githubusercontent.com/60011091/120061083-145ac180-c079-11eb-9c58-5a438ee40fad.JPG)
 
@@ -450,7 +450,7 @@ Here we will be taking second file opt_check2 module where we have assign y= a?1
 
 
 
-# Lab for Sequential Optimizations
+### Lab for Sequential Optimizations
 
 ![Capture65](https://user-images.githubusercontent.com/60011091/120063008-af0bce00-c082-11eb-8421-ce3623d80f16.JPG)
 
@@ -464,7 +464,7 @@ Here we will be taking second file opt_check2 module where we have assign y= a?1
 
 
 
-dff_const1
+#### dff_const1
 
 
 ![Capture69](https://user-images.githubusercontent.com/60011091/120063891-1592eb00-c087-11eb-8550-7be69f41940a.JPG)
@@ -472,7 +472,7 @@ dff_const1
 ![image](https://user-images.githubusercontent.com/60011091/120063938-5854c300-c087-11eb-88a0-843af2713ad9.png)
 
 
-Synthesis
+#### Synthesis
 
 
 ![Capture71](https://user-images.githubusercontent.com/60011091/120064324-28a6ba80-c089-11eb-8125-353dab4c3d9d.JPG)
@@ -485,7 +485,7 @@ Synthesis
 ![Capture75](https://user-images.githubusercontent.com/60011091/120064527-3e68af80-c08a-11eb-8407-2d62f450cb8e.JPG)
 
 
-dff_const2
+#### dff_const2
 ![Capture76](https://user-images.githubusercontent.com/60011091/120064872-14b08800-c08c-11eb-9468-8deca70722e9.JPG)
 
 
@@ -495,7 +495,7 @@ dff_const2
 
 
 
-# Lab for Sequential Optimizations for unused inputs
+### Lab for Sequential Optimizations for unused inputs
 
 ![Capture79](https://user-images.githubusercontent.com/60011091/120065562-80482480-c08f-11eb-9bf1-2034ab11bd58.JPG)
 
@@ -513,8 +513,184 @@ dff_const2
 
 
 
+## DAY-4 Gate Level Synthesis (GLS), Synthesis-Simulation mismatch and Blocking/Non-blocking statements
+
+ ### GLS
+
+Here we are going to run the tesbench along with netlist as DUT (Design under Test).
+Netlist and RTL code are one and the same as we are going to use the same testbench for the design 
+We need GLS to verify the correctness of the design after synthesis and also for ensuring the timing of the design is met.
+If the Gate level models are delay annotated, GLS can be used for timing validation.
+
+
+#### GLS using iverilog 
+
+![Untitled Workspace](https://user-images.githubusercontent.com/60011091/120066929-8ee60a00-c096-11eb-82d1-95bd7ed6029e.png)
+
+#### Synthesis- Simulation Mismatches
+
+This can happen because of following conditions as listed below:
+
+1) Missing sensitivity list
+
+Here we will be taking an example code 
+
+![Capture86](https://user-images.githubusercontent.com/60011091/120067266-3879cb00-c098-11eb-952b-c42f9004ec05.JPG)
+
+Here we see that whenever 'sel' is changing 'y' will also be changing. 
+The always block statement gets evaluated only when 'sel' is changing and so always block is not sensitive to either i1 or i2 activities because of which we will not be getting Y output based on changes in i0 and i1. So this circuit behaves like a latch 
+
+So, the solution to this problem is the below image showing us the code.
+
+![Capture87](https://user-images.githubusercontent.com/60011091/120067511-b094c080-c099-11eb-8bd6-425570fdb478.JPG)
+Here the always block gets evaluated for 'sel', 'i0' and 'i1'. So now we will be getting the exact output as we had expected.
+
+
+2) Blocking versus non blocking assignments
+
+Inside always block 
+
+#### a) = ---> Blocking
+- Executes the statements in the order it is written and so the first statement is evaluated before the second statement
+
+#### b) <= ---> Non Blocking
+- Executes all the RHS when the always block is entered and assigned to LHS. So in other words, this assignments does parallel evaluation.
+
+#### Caveats in Blocking Statements example 
+
+
+![Capture88](https://user-images.githubusercontent.com/60011091/120068096-990b0700-c09c-11eb-8dad-a54cfd7dbe46.JPG)
+![Capture89](https://user-images.githubusercontent.com/60011091/120068178-fdc66180-c09c-11eb-86f3-a09d494c812b.JPG)
+
+Comparing the above images with code the first images shows the correct code 
+But in the second image in the third begin statement instead of q=qo then q0=d but we've q0=d followed by q=q0 so by the time q0 is assigned to q, q0 will be already having the value of d that means there is only one flip flop instead of two in the 1st image of this section.
+
+The second image code problem can be fixed by using non blocking statements as shown below:
+
+![Capture90](https://user-images.githubusercontent.com/60011091/120068420-3adf2380-c09e-11eb-928e-218628c5f6f9.JPG)
+
+
+We take a different example to understand the problem more clearly
+
+![Capture91](https://user-images.githubusercontent.com/60011091/120068647-5bf44400-c09f-11eb-923b-ce21a9860e22.JPG)
+
+Here in the above image  has y=q0&c and q0=a|b so q0 will be taking the previous value to evaluate y then a|b is assigned to q0. So this code mimic a delay or a flip flop 
+
+Solution to this problem is the below image 
+
+![Capture92](https://user-images.githubusercontent.com/60011091/120068776-0cfade80-c0a0-11eb-8001-3a75780f8ffc.JPG)
+
+#### Lab for GLS Synthesis Simulation Mismatch
+
+![Capture93](https://user-images.githubusercontent.com/60011091/120069040-716a6d80-c0a1-11eb-9b12-a4bc6133f156.JPG)
+
+![Capture94](https://user-images.githubusercontent.com/60011091/120069064-91019600-c0a1-11eb-8207-03c76722fa11.JPG)
+
+![Capture95](https://user-images.githubusercontent.com/60011091/120069162-11c09200-c0a2-11eb-9545-53b38ab99deb.JPG)
+
+##### Simulation and Waveform Viewer
+
+![Capture96](https://user-images.githubusercontent.com/60011091/120069346-2a7d7780-c0a3-11eb-8220-4bae1c506581.JPG)
+
+![Capture97](https://user-images.githubusercontent.com/60011091/120069453-aecffa80-c0a3-11eb-9fcc-2a27e9374e83.JPG)
+
+##### Synthesis
+
+![Capture98](https://user-images.githubusercontent.com/60011091/120069595-4cc3c500-c0a4-11eb-9d89-c657dc38cd16.JPG)
+
+![Capture99](https://user-images.githubusercontent.com/60011091/120069685-cfe51b00-c0a4-11eb-8e8c-4d1705b5ab12.JPG)
+
+![Capture100](https://user-images.githubusercontent.com/60011091/120069843-9cef5700-c0a5-11eb-9a32-7b017a20e559.JPG)
+
+![image](https://user-images.githubusercontent.com/60011091/120069881-ca3c0500-c0a5-11eb-9bbe-4025b42de784.png)
+
+![Capture102](https://user-images.githubusercontent.com/60011091/120069915-05d6cf00-c0a6-11eb-8ae8-82a67d194b0b.JPG)
+
+
+##### GLS Simulation 
+
+![Capture103](https://user-images.githubusercontent.com/60011091/120070281-4d118f80-c0a7-11eb-9ced-6f5136dccab6.JPG)
+
+![Capture104](https://user-images.githubusercontent.com/60011091/120070382-e0e35b80-c0a7-11eb-8068-f2fc98742221.JPG)
+
+
+#### Bad Mux Example
+
+
+![Capture94](https://user-images.githubusercontent.com/60011091/120069064-91019600-c0a1-11eb-8207-03c76722fa11.JPG)
+
+##### Simulation
+
+![Capture105](https://user-images.githubusercontent.com/60011091/120070515-8dbdd880-c0a8-11eb-97b2-5f2168cf2a9b.JPG)
+
+![Capture106](https://user-images.githubusercontent.com/60011091/120070570-ce1d5680-c0a8-11eb-8061-2aeb8fc11e7b.JPG)
+
+##### Synthesis 
+
+![Capture107](https://user-images.githubusercontent.com/60011091/120070740-a4186400-c0a9-11eb-8a26-37b1e55ff00b.JPG)
+
+![Capture108](https://user-images.githubusercontent.com/60011091/120070822-f8234880-c0a9-11eb-9ae8-7f2b818bd337.JPG)
+
+![Capture109](https://user-images.githubusercontent.com/60011091/120070889-55b79500-c0aa-11eb-8985-61f026007488.JPG)
+
+###### GLS simulation 
+![Capture110](https://user-images.githubusercontent.com/60011091/120071048-06259900-c0ab-11eb-8aa5-6179f6f770ff.JPG)
+
+###### Comparison
+
+![Capture106](https://user-images.githubusercontent.com/60011091/120070570-ce1d5680-c0a8-11eb-8061-2aeb8fc11e7b.JPG)
+
+![Capture111](https://user-images.githubusercontent.com/60011091/120071170-a4b1fa00-c0ab-11eb-8c5c-99ff7fdde7ce.JPG)
+
+
+
+#### Lab for Synthesis Simulation Mismatch for blocking statements
+
+![Capture112](https://user-images.githubusercontent.com/60011091/120071837-8dc0d700-c0ae-11eb-9e59-da6b4d3533f4.JPG)
+
+The above image d= x &c and x = a|b, here we have to take previous value of x for evaluating d as if x is to be a flopped output in simulation 
+
+![Capture113](https://user-images.githubusercontent.com/60011091/120072100-a1207200-c0af-11eb-9522-950b98274211.JPG)
+
+![Capture114](https://user-images.githubusercontent.com/60011091/120072169-02e0dc00-c0b0-11eb-8981-2d1cf5d092b2.JPG)
+
+##### Synthesis 
+
+![Capture115](https://user-images.githubusercontent.com/60011091/120072252-85699b80-c0b0-11eb-964e-3f237a9b15ee.JPG)
+
+![Capture116](https://user-images.githubusercontent.com/60011091/120072296-c8c40a00-c0b0-11eb-8c3c-9b6fe412068a.JPG)
+
+![Capture117](https://user-images.githubusercontent.com/60011091/120072352-1e001b80-c0b1-11eb-9412-6c500ddf5b99.JPG)
+
+![Capture118](https://user-images.githubusercontent.com/60011091/120072390-56075e80-c0b1-11eb-8857-c37bde65ffd6.JPG)
+
+##### GLS Simulation
+
+![Capture119](https://user-images.githubusercontent.com/60011091/120072537-08d7bc80-c0b2-11eb-8a26-717b70daad95.JPG)
+
+##### Comparison
+![Capture114](https://user-images.githubusercontent.com/60011091/120072169-02e0dc00-c0b0-11eb-8981-2d1cf5d092b2.JPG)
+
+![Capture120](https://user-images.githubusercontent.com/60011091/120072640-7e438d00-c0b2-11eb-89de-0a5138995f82.JPG)
+
+
+#### Day-5 
+
+
+
+
+
+
+
+
+
 
 
  
+
+
+
+
+
 
 
