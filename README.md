@@ -18,7 +18,7 @@ VSD Sky130 RTL Design and Synthesis Workshop was a five day workshop conducted b
   * [iverilog and gtkwave introduction lab](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#iverilog-and-gtkwave-introduction-lab)
   * [RTL Synthesizer and Logic synthesis](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#RTL-Synthesizer-and-Logic-synthesis)
   * [.lib files](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#.lib-files)
-  * [Yosys introduction lab](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Yosys introduction lab) 
+  * [Yosys introduction lab](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Yosys-introduction-lab) 
    
     
 - [Day-2 Timing libs Hierarchy versus flat synthesis and efficient flop styles](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Day-2-Timing-libs-Hierarchy-versus-flat-synthesis-and-efficient-flop-styles)
@@ -31,14 +31,14 @@ VSD Sky130 RTL Design and Synthesis Workshop was a five day workshop conducted b
   * [Combinational Optimizations](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Combinational-Optimizations)
   * [Sequential Optimizations](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Sequential-Optimizations)
   * [Lab for Combinational Optimizations](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-Combinational-Optimizations)
-  * [Lab for Sequential Optimizations](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab for-Sequential-Optimizations)
+  * [Lab for Sequential Optimizations](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-Sequential-Optimizations)
   * [Lab for Sequential Optimizations for unused inputs](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-Sequential-Optimizations-for-unused-inputs)
     
 - [Day-4 Gate Level Synthesis Synthesis Simulation mismatch and Blocking Non blocking statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#DAY-4-Gate-Level-Synthesis-Synthesis-Simulation-mismatch-and-Blocking-Non-blocking-statements)
   * [GLS](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#GLS)
   * [Synthesis Simulation Mismatches](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Synthesis-Simulation-Mismatches)
   * [Lab for GLS Synthesis Simulation Mismatch](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-GLS-Synthesis-Simulation-Mismatch)
-  * [Lab for Synthesis Simulation Mismatch for blocking statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-Synthesis-Simulation-Mismatch-for-blocking-statements
+  * [Lab for Synthesis Simulation Mismatch for blocking statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-Synthesis-Simulation-Mismatch-for-blocking-statements)
   
 - [Day-5 If Case For Loop and for Generate statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Day-5 If-Case-For-Loop-and for-Generate statements)
   * [If statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#If-statements) 
