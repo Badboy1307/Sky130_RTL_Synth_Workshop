@@ -14,39 +14,39 @@ VSD Sky130 RTL Design and Synthesis Workshop was a five day workshop conducted b
 
 - [Day-1 Verilog RTL Simulation Synthesis and Design](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Day-1-Verilog-RTL-Simulation-Synthesis-and-Design)
   * [RTL Simulation](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#RTL-Simulation) 
-  * Lab for Setting up the Lab
-  * iverilog and gtkwave introduction lab
-  * RTL Synthesizer and Logic synthesis
-  * .lib files
-  * Yosys introduction lab 
+  * [Lab for Setting up the Lab](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-Setting-up-the-Lab)
+  * [iverilog and gtkwave introduction lab](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#iverilog-and-gtkwave-introduction-lab)
+  * [RTL Synthesizer and Logic synthesis](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#RTL-Synthesizer-and-Logic-synthesis)
+  * [.lib files](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#.lib-files)
+  * [Yosys introduction lab](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Yosys introduction lab) 
    
     
 - [Day-2 Timing libs Hierarchy versus flat synthesis and efficient flop styles](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Day-2-Timing-libs-Hierarchy-versus-flat-synthesis-and-efficient-flop-styles)
-  * .lib file lab 
-  * Hierarchy vs flat Synthesis lab 
-  * Lab for Flop styles
-  * Interesting Optimizations
+  * [.lib file lab](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#.lib-file-lab) 
+  * [Hierarchy vs flat Synthesis lab](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Hierarchy-vs-flat-Synthesis-lab) 
+  * [Lab for Flop styles](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-Flop-styles)
+  * [Interesting Optimizations](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Interesting-Optimizations)
     
 - [Day-3 Combinational and Sequential Optimizations](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Day-3-Combinational-and-Sequential-Optimizations)
-  * Combinational  Optimizations
-  * Sequential Optimizations
-  * Lab for Combinational  Optimizations
-  * Lab for Sequential Optimizations
-  * Lab for Sequential Optimizations for unused inputs
+  * [Combinational Optimizations](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Combinational-Optimizations)
+  * [Sequential Optimizations](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Sequential-Optimizations)
+  * [Lab for Combinational Optimizations](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-Combinational-Optimizations)
+  * [Lab for Sequential Optimizations](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab for-Sequential-Optimizations)
+  * [Lab for Sequential Optimizations for unused inputs](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-Sequential-Optimizations-for-unused-inputs)
     
 - [Day-4 Gate Level Synthesis Synthesis Simulation mismatch and Blocking Non blocking statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#DAY-4-Gate-Level-Synthesis-Synthesis-Simulation-mismatch-and-Blocking-Non-blocking-statements)
-  * GLS
-  * Synthesis- Simulation Mismatches
-  * Lab for GLS Synthesis Simulation Mismatch
-  * Lab for Synthesis Simulation Mismatch for blocking statements
+  * [GLS](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#GLS)
+  * [Synthesis Simulation Mismatches](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Synthesis-Simulation-Mismatches)
+  * [Lab for GLS Synthesis Simulation Mismatch](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-GLS-Synthesis-Simulation-Mismatch)
+  * [Lab for Synthesis Simulation Mismatch for blocking statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-Synthesis-Simulation-Mismatch-for-blocking-statements
   
-- [Day-5 If Case For Loop and for Generate statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Day-5-If-Case-For-Loop-and-for-Generate-statements)
-  * If statements 
-  * Case statements
-  * Lab for Incomplete If statements
-  * Lab for Incomplete case statements
-  * For loop statements and For generate statements
-  * Lab for  For loop statement and For generate statements
+- [Day-5 If Case For Loop and for Generate statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Day-5 If-Case-For-Loop-and for-Generate statements)
+  * [If statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#If-statements) 
+  * [Case statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Case-statements)
+  * [Lab for Incomplete If statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-Incomplete-If-statements)
+  * [Lab for Incomplete case statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-Incomplete-case-statements)
+  * [For loop statements and For generate statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#For-loop-statements-and-For-generate-statements)
+  * [Lab for  For loop statement and For generate statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-For-loop-statement-and-For-generate-statements)
      
                  
 
@@ -515,7 +515,7 @@ Using Simulator and Waveform viewer
 ## Day-3 Combinational and Sequential Optimizations
 
 
-### Combinational  Optimizations
+### Combinational Optimizations
 
 
 Logics are squeezed to obtain the most optimized design in terms of Area, Power savings
@@ -571,7 +571,7 @@ Here in this circuit even if there is a reset or not the Q value value is going 
 -Sequential Logic cloning (floor plan aware synthesis)
 
 
-### Lab for Combinational  Optimizations
+### Lab for Combinational Optimizations
 
      $ ls *opt*
      $ ls *opt_check*
