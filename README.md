@@ -17,12 +17,12 @@ VSD Sky130 RTL Design and Synthesis Workshop was a five day workshop conducted b
   * [Lab for Setting up the Lab](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-Setting-up-the-Lab)
   * [iverilog and gtkwave introduction lab](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#iverilog-and-gtkwave-introduction-lab)
   * [RTL Synthesizer and Logic synthesis](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#RTL-Synthesizer-and-Logic-synthesis)
-  * [.lib files](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#.lib-files)
+  * [dotlib files](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#dotlib-files)
   * [Yosys introduction lab](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Yosys-introduction-lab) 
    
     
 - [Day-2 Timing libs Hierarchy versus flat synthesis and efficient flop styles](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Day-2-Timing-libs-Hierarchy-versus-flat-synthesis-and-efficient-flop-styles)
-  * [.lib file lab](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#.lib-file-lab) 
+  * [dotlib file lab](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#dotlib-file-lab) 
   * [Hierarchy vs flat Synthesis lab](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Hierarchy-vs-flat-Synthesis-lab) 
   * [Lab for Flop styles](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-Flop-styles)
   * [Interesting Optimizations](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Interesting-Optimizations)
@@ -212,7 +212,7 @@ RTL Design is the behavioral representation of the needed specifications.
 
 In Logic synthesis, RTL code is converted to gate level translation and so the connections are made with the gates and finally it's taken out as netlist.
 
-### .lib files
+### dotlib files
 These are collection of logic modules which consists of basic gates like and, or, not etc and can have different flavors for the same gate.
 
 #### Why do we have diiferent flavors of basic gates?
@@ -279,7 +279,7 @@ sky130_fd_sc_hd__o21ai_1 in netlist visualization has 3 inputs and 1 output as i
 
 ## Day-2 Timing libs  Hierarchy versus flat synthesis and efficient flop styles
 
-### .lib file lab 
+### dotlib file lab 
 ![Capture13](https://user-images.githubusercontent.com/60011091/120023408-5c42ff80-c00b-11eb-9695-e9d3daf567db.JPG)
 
 
