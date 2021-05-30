@@ -12,7 +12,7 @@ VSD Sky130 RTL Design and Synthesis Workshop was a five day workshop conducted b
 ## Table of Contents 
      
 
-- [DAY1- Verilog RTL Simulation, Synthesis and Design](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#DAY1- Verilog RTL Simulation, Synthesis and Design")
+- [DAY1- Verilog RTL Simulation, Synthesis and Design](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#DAY1- Verilog RTL Simulation, Synthesis and Design)
   * RTL Simulation 
   * Lab for Setting up the Lab
   * iverilog and gtkwave introduction lab
