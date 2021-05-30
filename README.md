@@ -11,6 +11,16 @@ VSD Sky130 RTL Design and Synthesis Workshop was a five day workshop conducted b
 
 ## Table of Contents 
      
+- [Heading](#DAY1- Verilog RTL Simulation, Synthesis and Design)
+  * [Sub-heading](#sub-heading)
+    + [Sub-sub-heading](#sub-sub-heading)
+- [Heading](#heading-1)
+  * [Sub-heading](#sub-heading-1)
+    + [Sub-sub-heading](#sub-sub-heading-1)
+- [Heading](#heading-2)
+  * [Sub-heading](#sub-heading-2)
+    + [Sub-sub-heading](#sub-sub-heading-2)     
+     
                  
 
 ## DAY1- Verilog RTL Simulation, Synthesis and Design 
@@ -1106,3 +1116,13 @@ We are taking an example where we are taking rca.v file which is a ripple carry 
 
 Here we see that the waveform obtained in normal simulation and GLS simulation are the same.
 
+
+By this, we have come to the end of 5 days workshop so by now I have sucessfully learnt theoretical and practical approach  on how to simulate, displaying waveform, synthesize, do gate level synthesis (netlist generation) and finally again display the waveforms to check the correctness of the design starting from smaller verilog codes to complex ones.
+
+
+
+## Acknowledgements
+
+Shon Taware - VSD Teaching Assistant
+
+Kunal Ghosh - Co-founder(VSD Corp. Pvt. Ltd)
