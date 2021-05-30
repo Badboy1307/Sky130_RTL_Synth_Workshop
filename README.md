@@ -707,23 +707,402 @@ The above image d= x &c and x = a|b, here we have to take previous value of x fo
 ![Capture120](https://user-images.githubusercontent.com/60011091/120072640-7e438d00-c0b2-11eb-89de-0a5138995f82.JPG)
 
 
-#### Day-5 
+## Day-5 If, Case, For Loop and for Generate statements
 
+###  If statements
 
+If statements are mainly used to create priority logic. These statements are used inside alaways block. Variables used in if statements are register variables.
 
+The syntax and structure of If statement is given below
 
-
-
-
-
-
-
-
+                        if <condition 1>
+                        begin
+                        ---------
+                        ---------
+                        ---------
+                        end
+                        else if <condition 2>
+                        begin
+                        ---------
+                        ---------
+                        ---------
+                        end
+                        else if <condition 3>
+                        begin
+                        ---------
+                        ---------
+                        ---------
+                        end
+                        else 
+                        begin
+                        ---------
+                        ---------
+                        ---------
+                        end
+ 
+The above structure depending on the number of if-else if statements we can map these statements in the form of hardware circuit that is a mux with conditions. 
+                        
+ #### Dangers of If statement 
+ 
+ Incomplete If statements can cause inferred latches and this is particularly a bad coding style. The example is shown below:
+ 
+ 
+ if (condt1)
+     y=a;
+ else if (condt2)  
+     y=b;
+     
+     
+ If we leave the code incomplete like this if any of the conditions are not satisfied it will automatically try to latch as we have not provided the else statement in the above example. This latch condition is called inferred latch condition when incomplete if statement is used.
+ 
+ 
+ There are cases where we use incomplete if statements say for examplwe use it in counters then the incomplete if statements looks like this,
+ 
+ always @ (posedge clk, posedge reset)
+ begin 
+    if(reset)
+       count<=3'b000;
+    else if (en)
+       count<=count+1;
+ end
+ 
+ If there is no count value the circuit will automatically latches to store previous avlue to be used in the next iteration. Since counters are sequential circuits this latching proves to be useful and so this is one of the exception cases of incomplete if statements.
+ 
+ 
  
 
+###  Case statements
+
+Case statements are used inside always block. Variables used in case statements are register variables. Example for case statement is shown below:
+
+reg y;
+always @(*)
+begin
+  case(sel)
+       2'b00: begin
+              ---------
+              ---------
+              end
+       2'b01: begin
+              ---------
+              ---------
+              end
+       ---------------
+       ---------------
+       ---------------
+       default: -----------
+       --------------------
+   endcase
+end
+
+
+#### Caveats in case statements
+
+
+##### Incomplete case statements
+
+This incomplete case statements also causes inferred latches just as in incomplete if statements. The example is shown below:
+
+
+reg y;
+always @(*)
+begin
+  case(sel)
+       2'b00: begin
+              ---------
+              ---------
+              end
+       2'b01: begin
+              ---------
+              ---------
+              end
+  endcase
+end  
+       
+Since, we have not told what's to be done after 2'b01 condition, the hardware will map the rest as a latch to retain previous values.       
+          
+ Solution to this problem is by adding default case statement to aviod latch up condition. 
+ 
+ 
+##### Partial assignment in case statement 
+
+
+reg y;
+always @(*)
+begin
+  case(sel)
+       2'b00: begin
+              x=a;
+              y=b;
+              end
+       2'b01: begin
+              x=c;
+              end
+       default: begin
+              x=d;
+              y=b;
+              end         
+  endcase
+end  
+
+Here we see that in 2'b01 we have incomplete assignments ie x is assigned 'c' buy y value is not known to us due to this again latch up happens to retain the previous value of y ie it take y=b from 2'b00 condition. 
+
+##### If we take an example like shown below, let's observe what happens next...
+
+reg y;
+always @(*)
+begin
+  case(sel)
+       2'b00: begin
+              ---------
+              ---------
+              end
+       2'b01: begin
+              ---------
+              ---------
+              end
+       2'b10: begin
+              ---------
+              ---------
+              end       
+       2'b1?: begin
+              ---------
+              ---------
+              end      
+              
+  endcase
+end  
+
+Here we will be getting unpredictable output as case statements are executed one after the other escpecially reaching the last condition statement 2'b1?: where we say our MSB is 1 bur lsb can be anything from 1 or 0 ans we can predict the exact value of the final outputs.
+
+This is an overlapping case statements.
+
+### Lab for Incomplete If statements
+
+We will be taking an example, incomp_if file
+
+![Capture121](https://user-images.githubusercontent.com/60011091/120091136-cd76d580-c125-11eb-8bba-89b9444ddf59.JPG)
+
+#### Simulation and waveform viewer
+
+![Capture122](https://user-images.githubusercontent.com/60011091/120091567-db2e5a00-c129-11eb-8b6a-1f9c6f12fcf5.JPG)
+
+![Capture123](https://user-images.githubusercontent.com/60011091/120091242-ea5fd880-c126-11eb-86dd-4a06ff8bdfc5.JPG)
+
+#### Synthesis 
+
+![Capture124](https://user-images.githubusercontent.com/60011091/120091340-d8326a00-c127-11eb-9864-066676d79e62.JPG)
+
+![Capture125](https://user-images.githubusercontent.com/60011091/120091369-2a738b00-c128-11eb-872e-6f20c321f281.JPG)
+
+![Capture126](https://user-images.githubusercontent.com/60011091/120091385-55f67580-c128-11eb-8941-b58d39abe83a.JPG)
+
+
+#### Design 
+
+![Capture127](https://user-images.githubusercontent.com/60011091/120091407-7b837f00-c128-11eb-89fc-9f8a375f417b.JPG)
+
+We will be taking another example, incomp_if2
+
+![Capture128](https://user-images.githubusercontent.com/60011091/120091510-622f0280-c129-11eb-96b3-07096ad36b11.JPG)
+
+#### Simulation and waveform viewer
+
+![Capture129](https://user-images.githubusercontent.com/60011091/120095229-69163f00-c142-11eb-827d-9875b505d903.JPG)
+
+![Capture130](https://user-images.githubusercontent.com/60011091/120091654-ed5cc800-c12a-11eb-8e8f-3841e7a12a18.JPG)
+
+
+#### Synthesis 
+
+![Capture131](https://user-images.githubusercontent.com/60011091/120091699-43ca0680-c12b-11eb-8384-9521e8ed6f24.JPG)
+![Capture132](https://user-images.githubusercontent.com/60011091/120091830-25b0d600-c12c-11eb-8ca5-ccfbee87f8c8.JPG)
+![Capture133](https://user-images.githubusercontent.com/60011091/120091847-424d0e00-c12c-11eb-9503-22a08f66ba8c.JPG)
+
+
+#### Design 
+![Capture134](https://user-images.githubusercontent.com/60011091/120091866-6e688f00-c12c-11eb-9106-77d37153d89e.JPG)
+
+
+### Lab for Incomplete case statements
+
+We will be taking an example of complete case statement file
+
+![Capture135](https://user-images.githubusercontent.com/60011091/120095040-433c6a80-c141-11eb-9187-a056d82c591d.JPG)
+
+#### Simulation and waveform viewer
+
+![Capture136](https://user-images.githubusercontent.com/60011091/120095132-d2498280-c141-11eb-9a7a-5e73edfba553.JPG)
+![Capture137](https://user-images.githubusercontent.com/60011091/120095239-77fcf180-c142-11eb-9fbf-638b675a8268.JPG)
+
+#### Synthesis 
+![image](https://user-images.githubusercontent.com/60011091/120095340-1be69d00-c143-11eb-9088-281423fb4dba.png)
+![Capture139](https://user-images.githubusercontent.com/60011091/120095358-3ae52f00-c143-11eb-84b9-5745c1476b4a.JPG)
+![Capture140](https://user-images.githubusercontent.com/60011091/120095383-5c461b00-c143-11eb-8698-0e2f4c872a74.JPG)
+
+#### Design 
+![Capture141](https://user-images.githubusercontent.com/60011091/120095442-9e6f5c80-c143-11eb-8dde-4b026014a825.JPG)
+
+
+
+We will be taking another example, incomplete statement file
+
+![Capture142](https://user-images.githubusercontent.com/60011091/120095512-04f47a80-c144-11eb-8250-f1748afa14ff.JPG)
+
+
+#### Simulation and waveform viewer
+
+![Capture143](https://user-images.githubusercontent.com/60011091/120095580-53a21480-c144-11eb-819d-3f940e974a29.JPG)
+
+![Capture144](https://user-images.githubusercontent.com/60011091/120095689-e642b380-c144-11eb-9e1c-0fc3aa7ae0e8.JPG)
+
+
+#### Synthesis 
+
+![Capture145](https://user-images.githubusercontent.com/60011091/120095703-f2c70c00-c144-11eb-9358-e375bd8e7513.JPG)
+
+![Capture146](https://user-images.githubusercontent.com/60011091/120095716-18541580-c145-11eb-990f-4b8d57adb964.JPG)
+![Capture147](https://user-images.githubusercontent.com/60011091/120095750-302b9980-c145-11eb-83f2-d8017211c4c6.JPG)
+
+
+#### Design 
+
+![Capture148](https://user-images.githubusercontent.com/60011091/120095787-73860800-c145-11eb-92ef-8f400a04147b.JPG)
+
+
+
+###  For loop statements and For generate statements
+
+Looping constructs uses for loop and  generate for loop statements
+
+
+#### For loop statement
+For loops can be used only inside always block. These loops can be used for evaluating expressions but not for instantaiating hardware.
+Example we are taking is a 32:1 Mux is as shown below:
+
+integer i;
+always @(*)
+begin 
+     for(i=0; i<32; i=i=1)
+     begin
+     if (i==sel)
+       y= inp[i];    //Assuming that inp[32:0] bus is declared in the main module.
+     end
+end     
+
+
+#### Generate for loop statement
+
+Generate for loop cannot be used inside always block but outside always block. Generate for loop is used in instantiating hardware.
+Taking an example for generate foor loop as shown below
+
+Suppose we need to instantiate and u_and( .a(), .b(), .y()) for 20 times it is not feasible to and u_and( .a(), .b(), .y()) this many times ie 
+       and u_and( .a(), .b(), .y())
+       and u_and( .a(), .b(), .y())
+       and u_and( .a(), .b(), .y())
+       ..................
+       ..................
+       ..................
+       ..................
+       Till 20th and gate instantiation
+
+Here we use generate for loops to instantiate gates and smaller modules in main modules as my times we want.
+
+genvar i
+generate
+      for (i=0; i,8; i=i+1) begin 
+      and u_and( .a(a[i]), .b(b[i]), .y(y[i]));
+      end
+end
+
+
+      
+### Lab for  For loop statement and For generate statements
+
+
+We are taking an example where we are taking mux_ generate file.
+
+![Capture149](https://user-images.githubusercontent.com/60011091/120096767-ef368380-c14a-11eb-8093-c21ec2fd0c2c.JPG)
+
+
+#### Simulation and waveform viewer
+
+![Capture150](https://user-images.githubusercontent.com/60011091/120097488-53a71200-c14e-11eb-82b5-4ce60d6f095e.JPG)
+
+![Capture151](https://user-images.githubusercontent.com/60011091/120097533-9b2d9e00-c14e-11eb-84ed-b51abcdcde77.JPG)
+
+
+#### Synthesis
+
+
+
+![Capture152](https://user-images.githubusercontent.com/60011091/120097751-e5fbe580-c14f-11eb-97a6-92557704c606.png)
+
+![Capture156](https://user-images.githubusercontent.com/60011091/120097775-0330b400-c150-11eb-8227-0567721b9b5c.JPG)
+
+![Capture157](https://user-images.githubusercontent.com/60011091/120097884-7d613880-c150-11eb-8ecc-72068f2f1d03.JPG)
+
+![Capture158](https://user-images.githubusercontent.com/60011091/120097939-c9ac7880-c150-11eb-9ad6-55d05171a243.JPG)
+
+
+
+
+#### Design 
+![Capture159](https://user-images.githubusercontent.com/60011091/120097964-00828e80-c151-11eb-8d2e-0adf47931c43.JPG)
+
+
+
+
+We are taking an example where we are taking rca.v file which is a ripple carry adder
+
+![Capture160](https://user-images.githubusercontent.com/60011091/120098376-290b8800-c153-11eb-8ea7-d18ecbe7308f.JPG)
+
+
+#### Simulation and waveform viewer
+
+![Capture161](https://user-images.githubusercontent.com/60011091/120098397-52c4af00-c153-11eb-8558-8f3a548c877c.JPG)
+
+![Capture162](https://user-images.githubusercontent.com/60011091/120098533-0f1e7500-c154-11eb-95d6-5269c0bfccfd.JPG)
+
+
+#### Synthesis
+
+![Capture163](https://user-images.githubusercontent.com/60011091/120098777-6ec95000-c155-11eb-98b0-5f50edb6b0ce.JPG)
+
+
+![Capture164](https://user-images.githubusercontent.com/60011091/120098773-683ad880-c155-11eb-81a6-0f61e0d32f50.JPG)
+
+
+![Capture165](https://user-images.githubusercontent.com/60011091/120098785-7557c780-c155-11eb-8736-fdfff787838c.JPG)
+
+
+![Capture166](https://user-images.githubusercontent.com/60011091/120099115-5a865280-c157-11eb-8771-b25756f7e4cd.JPG)
+
+
+![Capture167](https://user-images.githubusercontent.com/60011091/120099175-cb2d6f00-c157-11eb-8492-281367e43c0b.JPG)
 
 
 
 
 
+#### Design 
+
+![Capture168](https://user-images.githubusercontent.com/60011091/120099325-7807ec00-c158-11eb-85b9-728ec237e0f5.JPG)
+
+
+#### GLS Simulation
+
+
+![Capture169](https://user-images.githubusercontent.com/60011091/120099488-51968080-c159-11eb-9a5b-1d352cc0416e.JPG)
+
+
+#### Waveform Comparison 
+
+
+![Capture162](https://user-images.githubusercontent.com/60011091/120098533-0f1e7500-c154-11eb-95d6-5269c0bfccfd.JPG)
+
+![Capture171](https://user-images.githubusercontent.com/60011091/120099809-375da200-c15b-11eb-8e86-de3bc404a882.JPG)
+
+
+Here we see that the waveform obtained in normal simulation and GLS simulation are the same.
 
