@@ -34,7 +34,7 @@ VSD Sky130 RTL Design and Synthesis Workshop was a five day workshop conducted b
   * Lab for Sequential Optimizations
   * Lab for Sequential Optimizations for unused inputs
     
-- [DAY-4 Gate Level Synthesis (GLS) Synthesis-Simulation mismatch and Blocking/Non-blocking statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#DAY-4-Gate-Level-Synthesis-(GLS)-Synthesis-Simulation-mismatch-and-Blocking/Non-blocking-statements)
+- [DAY-4 Gate Level Synthesis Synthesis Simulation mismatch and Blocking Non blocking statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#DAY-4-Gate-Level-Synthesis-Synthesis-Simulation-mismatch-and-Blocking-Non-blocking-statements)
   * GLS
   * Synthesis- Simulation Mismatches
   * Lab for GLS Synthesis Simulation Mismatch
@@ -756,7 +756,7 @@ Here we will be taking second file opt_check2 module where we have assign y= a?1
 
 
 
-## DAY-4 Gate Level Synthesis (GLS) Synthesis-Simulation mismatch and Blocking/Non-blocking statements
+## DAY-4 Gate Level Synthesis  Synthesis Simulation mismatch and Blocking Non blocking statements
 
  ### GLS
 
@@ -770,7 +770,7 @@ If the Gate level models are delay annotated, GLS can be used for timing validat
 
 ![Untitled Workspace](https://user-images.githubusercontent.com/60011091/120066929-8ee60a00-c096-11eb-82d1-95bd7ed6029e.png)
 
-### Synthesis- Simulation Mismatches
+### Synthesis Simulation Mismatches
 
 This can happen because of following conditions as listed below:
 
