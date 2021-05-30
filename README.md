@@ -40,7 +40,7 @@ VSD Sky130 RTL Design and Synthesis Workshop was a five day workshop conducted b
   * [Lab for GLS Synthesis Simulation Mismatch](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-GLS-Synthesis-Simulation-Mismatch)
   * [Lab for Synthesis Simulation Mismatch for blocking statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-Synthesis-Simulation-Mismatch-for-blocking-statements)
   
-- [Day-5 If Case For Loop and for Generate statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Day-5-If-Case-For-Loop-and for-Generate statements)
+- [Day-5 If Case For Loop and for Generate statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Day-5-If-Case-For-Loop-and-for-Generate statements)
   * [If statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#If-statements) 
   * [Case statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Case-statements)
   * [Lab for Incomplete If statements](https://github.com/Badboy1307/Sky130_RTL_Synth_Workshop/blob/main/README.md#Lab-for-Incomplete-If-statements)
