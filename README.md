@@ -12,7 +12,41 @@ VSD Sky130 RTL Design and Synthesis Workshop was a five day workshop conducted b
 ## Table of Contents 
      
 
-
+- DAY1- Verilog RTL Simulation, Synthesis and Design 
+  * RTL Simulation 
+  * Lab for Setting up the Lab
+  * iverilog and gtkwave introduction lab
+  * RTL Synthesizer and Logic synthesis
+  * .lib files
+  * Yosys introduction lab 
+   
+    
+- Day-2 Timing libs , Hierarchy vs flat synthesis and efficient flop styles
+  * .lib file lab 
+  * Hierarchy vs flat Synthesis lab 
+  * Lab for Flop styles
+  * Interesting Optimizations
+    
+- Day-3 Combinational and Sequential Optimizations
+  * Combinational  Optimizations
+  * Sequential Optimizations
+  * Lab for Combinational  Optimizations
+  * Lab for Sequential Optimizations
+  * Lab for Sequential Optimizations for unused inputs
+    
+- DAY-4 Gate Level Synthesis (GLS), Synthesis-Simulation mismatch and Blocking/Non-blocking statements
+  * GLS
+  * Synthesis- Simulation Mismatches
+  * Lab for GLS Synthesis Simulation Mismatch
+  * Lab for Synthesis Simulation Mismatch for blocking statements
+  
+- Day-5 If, Case, For Loop and for Generate statements
+  * If statements 
+  * Case statements
+  * Lab for Incomplete If statements
+  * Lab for Incomplete case statements
+  * For loop statements and For generate statements
+  * Lab for  For loop statement and For generate statements
      
                  
 
@@ -52,15 +86,15 @@ Here I will be covering how we are going to setup our lab server to simulate, vi
 Initially we will be creating a VLSI directory using mkdir VLSI and then we cd into the directory using cd VLSI as shown below
 
 
-              $ mkdir VLSI
-              $ cd VLSI
-              $ ls
+    $ mkdir VLSI
+    $ cd VLSI
+    $ ls
 
 ![image](https://user-images.githubusercontent.com/60011091/119877385-98f8f300-bf46-11eb-8ece-f88d6dcbdde4.png)
                    
-                   $ mkdir VLSI
-                   $ cd VLSI
-                   $ ls
+     $ mkdir VLSI
+     $ cd VLSI
+     $ ls
 
 Here we use ls command to list out all the files in that particular directory as shown in the above image. 
 
@@ -71,9 +105,9 @@ Now that the  prerequisites of git cloning are done we need to start cloning vsd
 
 VSDFLOW repository can be cloned by git clone
                                
-                               $ https://github.com/kunalg123/vsdflow.git
-                               $ cd vsdflow
-                               $  ls -ltr
+    $ https://github.com/kunalg123/vsdflow.git
+    $ cd vsdflow
+    $  ls -ltr
 
 ![image](https://user-images.githubusercontent.com/60011091/119933860-801e2b00-bfa2-11eb-840f-f84961891174.png)
 
@@ -93,9 +127,9 @@ g) OpenTimer & OpenSTA are STA (Static timing analysis) tools
 sky130 RTL Design and Synthesis Workshop can be cloned by 
 
 
-                                  $ https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
-                                  $ cd sky130RTLDesignAndSynthesisWorkshop
-                                  $ ls -ltr 
+      $ https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+      $ cd sky130RTLDesignAndSynthesisWorkshop
+      $ ls -ltr 
                                   
 
 ![image](https://user-images.githubusercontent.com/60011091/119934398-5a455600-bfa3-11eb-940b-284ad3037d96.png)
@@ -178,10 +212,10 @@ RTL Design is the behavioral representation of the needed specifications.
 
 In Logic synthesis, RTL code is converted to gate level translation and so the connections are made with the gates and finally it's taken out as netlist.
 
-### .Lib files
+### .lib files
 These are collection of logic modules which consists of basic gates like and, or, not etc and can have different flavors for the same gate.
 
-## Why do we have diiferent flavors of basic gates?
+#### Why do we have diiferent flavors of basic gates?
 
 In the logic path, combinational delay determines the maximum speed of operation of digital logic circuits.
 
@@ -193,7 +227,7 @@ In the logic path, combinational delay determines the maximum speed of operation
 
 The above images describes the clock cycle process and how it can be calculated. We need faster cell lib for faster clock speed and setup time. But we need slower cells to avoid hold time issues. Collection of fast cells and slow cells form the .lib.
 
-### Faster Cells versus Slower Cells
+##### Faster Cells versus Slower Cells
 
 
 The output loads in digital circuits are mostly capacitive loads.
@@ -358,7 +392,7 @@ Hierarchy Synthesis
 The above image shows the comparison Asynchronous reset, Asynchronous set , Synchronous reset and Synchronous reset.
 
 
-## Lab for Flop styles
+### Lab for Flop styles
 
 
 Using Simulator and Waveform viewer
@@ -488,7 +522,7 @@ Logics are squeezed to obtain the most optimized design in terms of Area, Power 
 
 
 
-### Methods for Combinational  Optimizations
+#### Methods for Combinational  Optimizations
 
 
 1) Constant propagation 
@@ -736,7 +770,7 @@ If the Gate level models are delay annotated, GLS can be used for timing validat
 
 ![Untitled Workspace](https://user-images.githubusercontent.com/60011091/120066929-8ee60a00-c096-11eb-82d1-95bd7ed6029e.png)
 
-#### Synthesis- Simulation Mismatches
+### Synthesis- Simulation Mismatches
 
 This can happen because of following conditions as listed below:
 
@@ -789,7 +823,7 @@ Solution to this problem is the below image
 
 ![Capture92](https://user-images.githubusercontent.com/60011091/120068776-0cfade80-c0a0-11eb-8001-3a75780f8ffc.JPG)
 
-#### Lab for GLS Synthesis Simulation Mismatch
+### Lab for GLS Synthesis Simulation Mismatch
 
      
 
@@ -896,7 +930,7 @@ Solution to this problem is the below image
 
 
 
-#### Lab for Synthesis Simulation Mismatch for blocking statements
+### Lab for Synthesis Simulation Mismatch for blocking statements
 
 ![Capture112](https://user-images.githubusercontent.com/60011091/120071837-8dc0d700-c0ae-11eb-9e59-da6b4d3533f4.JPG)
 
