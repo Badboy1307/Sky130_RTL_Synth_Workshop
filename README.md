@@ -11,15 +11,8 @@ VSD Sky130 RTL Design and Synthesis Workshop was a five day workshop conducted b
 
 ## Table of Contents 
      
-- [Heading](#DAY1- Verilog RTL Simulation, Synthesis and Design)
-  * [Sub-heading](#sub-heading)
-    + [Sub-sub-heading](#sub-sub-heading)
-- [Heading](#heading-1)
-  * [Sub-heading](#sub-heading-1)
-    + [Sub-sub-heading](#sub-sub-heading-1)
-- [Heading](#heading-2)
-  * [Sub-heading](#sub-heading-2)
-    + [Sub-sub-heading](#sub-sub-heading-2)     
+
+
      
                  
 
@@ -52,7 +45,7 @@ The above image shows the flow of iverilog simulator whose inputs consist of des
 In the very same image we see that the output file of iverilog that is our vcd file is sent as input to gtk wave which is a vcd waveform viewer where we can check the correctness of a particular design logic which can be a simple or a complex circuit or can be a combinational or sequential circuit designs.
 
 
-### LAB1- Setting up the Lab 
+### Lab for Setting up the Lab 
 
 Here I will be covering how we are going to setup our lab server to simulate, view and synthesis the given specification of a design.
 
@@ -110,12 +103,12 @@ sky130 RTL Design and Synthesis Workshop can be cloned by
 
 This image displays all the contents of sky130 RTL Design and Synthesis Workshop directory in a detailed fashion.
 
-                                   $ cd my_lib 
-                                   $ ls
-                                   $ cd lib 
-                                   $ ls 
-                                   $ cd verilog_models
-                                   $ ls
+    $ cd my_lib 
+    $ ls
+    $ cd lib 
+    $ ls 
+    $ cd verilog_models
+    $ ls
   
 
 ![image](https://user-images.githubusercontent.com/60011091/119973629-5b8d7780-bfd1-11eb-8b1f-80c757205c5e.png)
@@ -129,19 +122,29 @@ This image displays all the contents of sky130 RTL Design and Synthesis Workshop
 These two images displays all the subfolders of  my_lib, lib and verilog files in the sky130 RTL Design and Synthesis Workshop directory
 
 
-### LAB2- iverilog and gtkwave introduction lab
+### iverilog and gtkwave introduction lab
 
 In this lab iverilog was used as simulator and gtkwave for vcd waveform viewer
 
 
 
-![Capture](https://user-images.githubusercontent.com/60011091/119986983-23dafb80-bfe2-11eb-9fe8-dcce9e1e009b.JPG)
+![Capture](https://user-images.githubusercontent.com/60011091/119986983-23dafb80-bfe2-11eb-9fe8-dcce9e1e009b.JPG) 
+        
+       $ iverilog good_mux.v tb_good.mux.v
+       $ ls
+       $ ./a.out
+       $ gtkwave tb_good_mux.v
 
-![Capture_1](https://user-images.githubusercontent.com/60011091/119987012-2b9aa000-bfe2-11eb-875c-d1b7e16bb6fe.JPG)
+#### Simulation and Waveform Viewer
+
+![Capture_1](https://user-images.githubusercontent.com/60011091/119987012-2b9aa000-bfe2-11eb-875c-d1b7e16bb6fe.JPG)           
 
 ![Capture_2](https://user-images.githubusercontent.com/60011091/119987022-2e959080-bfe2-11eb-987b-313208d6b607.JPG)
 
 ![Capture_3](https://user-images.githubusercontent.com/60011091/119987033-31908100-bfe2-11eb-97f7-bdfe3a660f1e.JPG)
+
+
+#### Design 
 
 ![Capture_4](https://user-images.githubusercontent.com/60011091/119987040-33f2db00-bfe2-11eb-85b1-ddd24472d0d4.JPG)
 
@@ -202,6 +205,14 @@ Wider transistors has low delays but greater power and area for a given design s
 
 ### Yosys introduction lab 
 
+     $ yosys
+     yosys> read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+     yosys> read_verilog good_mux.v
+     yosys> synth -top good_mux
+     yosys> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+     yosys> show 
+     
+
 ![Capture5](https://user-images.githubusercontent.com/60011091/120017907-0fa7f600-c004-11eb-897b-6bbe22ec4d35.JPG)
 
 
@@ -222,6 +233,8 @@ Wider transistors has low delays but greater power and area for a given design s
 
 ![Capture11](https://user-images.githubusercontent.com/60011091/120021160-526bcd00-c008-11eb-880c-af66a429ae95.JPG)
 
+
+#### Design
 
 
 ![Capture12](https://user-images.githubusercontent.com/60011091/120021523-cc03bb00-c008-11eb-97f0-eac9dbb78b88.JPG)
@@ -255,6 +268,20 @@ Hierarchy Synthesis
 ![Capture16](https://user-images.githubusercontent.com/60011091/120024686-2ef75100-c00d-11eb-98bc-2082e617716f.JPG)
 
 
+#### Synthesis 
+
+
+    $ yosys
+    yosys> read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> read_verilog multiple_module.v
+    yosys> synth -top multiple_module
+    yosys> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> show multiple_modules
+    yosys> write_verilog -noattr multiple_modules_hier.v
+    yosys> show
+
+
+
 ![Capture17](https://user-images.githubusercontent.com/60011091/120024695-30c11480-c00d-11eb-9893-60a9777b6f6d.JPG)
 
 
@@ -274,21 +301,39 @@ Hierarchy Synthesis
 ![Capture23](https://user-images.githubusercontent.com/60011091/120026094-30c21400-c00f-11eb-9cba-28fe3515c2cd.JPG)
 
 
+#### Design
+
 ![Capture24](https://user-images.githubusercontent.com/60011091/120026330-8ac2d980-c00f-11eb-9822-41a2a49d049e.JPG)
 
+##### Hierarchy file
 
-![Capture26](https://user-images.githubusercontent.com/60011091/120027056-8945e100-c010-11eb-90be-0430255b4d53.JPG)
+      yosys> !gedit multiple_modules_hier.v
+
+![image](https://user-images.githubusercontent.com/60011091/120103768-e35cb880-c16e-11eb-98ef-19a7517cd75f.png)
 
 
-#### Flat Synthesis 
+
+##### Flat Synthesis 
+
+      yosys> write_verilog -noattr multiple_modules_flat.v
 
 ![Capture27](https://user-images.githubusercontent.com/60011091/120027495-0e30fa80-c011-11eb-9812-65ac466afb91.JPG)
 
+      yosys> !gedit multiple_modules_flat.v 
 
 ![Capture28](https://user-images.githubusercontent.com/60011091/120027691-4fc1a580-c011-11eb-8bb7-1f36dd655bbf.JPG)
 
 
-#### Submodules
+##### Submodules
+
+    $ yosys
+    yosys> read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> read_verilog multiple_module.v
+    yosys> synth -top multiple_module
+    yosys> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> show multiple_modules
+    yosys> write_verilog -noattr multiple_modules_hier.v
+    yosys> show
 
 
 ![Capture29](https://user-images.githubusercontent.com/60011091/120028253-1178b600-c012-11eb-8b6f-70770b408aed.JPG)
@@ -319,8 +364,11 @@ The above image shows the comparison Asynchronous reset, Asynchronous set , Sync
 Using Simulator and Waveform viewer
 
 
-#### Asynchronous reset
+##### Asynchronous reset
 
+      $ iverilog dff_asyncres.v tb_dff_asyncres.v
+      $ ./a.out
+      $ gtkwave tb_dff_asynres.vcd
 
 ![Capture34](https://user-images.githubusercontent.com/60011091/120029558-e727f800-c013-11eb-9a8e-2e69f1e86435.JPG)
 
@@ -328,7 +376,12 @@ Using Simulator and Waveform viewer
 ![Capture35](https://user-images.githubusercontent.com/60011091/120029806-35d59200-c014-11eb-9056-f23897ae7033.JPG)
 
 
-#### Asynchronous set
+##### Asynchronous set
+
+     $ iverilog dff_async_set.v tb_dff_async_set.v
+     $ ./a.out
+     $ gtkwave tb_dff_async_set.vcd
+                    
 
 
 ![Capture36](https://user-images.githubusercontent.com/60011091/120030107-a7154500-c014-11eb-9c81-65c59975dda8.JPG)
@@ -337,17 +390,30 @@ Using Simulator and Waveform viewer
 ![Capture37](https://user-images.githubusercontent.com/60011091/120030248-da57d400-c014-11eb-8e0d-5fa73442be08.JPG)
 
 
-#### Synchronous reset
+##### Synchronous reset
 
+      $ iverilog dff_syncres.v tb_dff_syncres.v
+      $ ./a.out
+      $ gtkwave tb_dff_synres.vcd
+
+
+Using Simulator and Waveform viewer
 
 ![Capture38](https://user-images.githubusercontent.com/60011091/120030551-3e7a9800-c015-11eb-8018-7beaaf449fbe.JPG)
 
+
 ![Capture39](https://user-images.githubusercontent.com/60011091/120030736-7681db00-c015-11eb-9e40-1346fcf12382.JPG)
 
-![Capture39](https://user-images.githubusercontent.com/60011091/120031140-07f14d00-c016-11eb-972e-d4290d765d93.JPG)
 
-#### Using Synthesizer for Asynchronous reset
 
+##### Using Synthesizer for Asynchronous reset
+
+    $ yosys
+    yosys> read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> read_verilog dff_asynres.v
+    yosys> synth -top dff_asynres
+    yosys> dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> show
 
 ![Capture40](https://user-images.githubusercontent.com/60011091/120031276-396a1880-c016-11eb-8f0e-2e77df970772.JPG)
 
@@ -358,7 +424,6 @@ Using Simulator and Waveform viewer
 ![Capture41](https://user-images.githubusercontent.com/60011091/120031223-26efdf00-c016-11eb-969c-f911f6101c66.JPG)
 
 
-![Capture42](https://user-images.githubusercontent.com/60011091/120031791-e349a500-c016-11eb-93af-460837e1db61.JPG)
 
 
 ![Capture43](https://user-images.githubusercontent.com/60011091/120031797-e5abff00-c016-11eb-8a98-ce60607a1bd5.JPG)
@@ -372,6 +437,8 @@ Using Simulator and Waveform viewer
 
 ### Interesting Optimizations
 
+     $ gedit mul_*.v
+
 
 ![Capture46](https://user-images.githubusercontent.com/60011091/120056558-b323f580-c05a-11eb-8dfc-070a2d07193a.JPG)
 
@@ -382,7 +449,14 @@ Using Simulator and Waveform viewer
 ![Capture48](https://user-images.githubusercontent.com/60011091/120056613-0433e980-c05b-11eb-954d-49ea21be1ea4.JPG)
 
 
-#### Synthesis 
+##### Synthesis 
+
+    $ yosys
+    yosys> read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> read_verilog mult_2.v
+    yosys> synth -top mult2
+    yosys> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> show
 
 
 ![Capture49](https://user-images.githubusercontent.com/60011091/120056712-b370c080-c05b-11eb-9510-8b7c29d53e4c.JPG)
@@ -398,7 +472,7 @@ Using Simulator and Waveform viewer
 ![Capture52](https://user-images.githubusercontent.com/60011091/120056840-5e817a00-c05c-11eb-83b7-ae71f8596c17.JPG)
 
 
-#### Design 
+##### Design 
 
 
 ![Capture53](https://user-images.githubusercontent.com/60011091/120056868-8c66be80-c05c-11eb-9c52-944f50cd174d.JPG)
@@ -453,7 +527,7 @@ The overall MUX expression will be Y=  ((ac+c'0). b'+bc).a+ a'c'    (Since c'.0=
  
 -Sequential constant propagation
 
-![image](https://user-images.githubusercontent.com/60011091/120060768-3c492580-c077-11eb-9e6c-eea9e2ae383f.png)
+![image](https://user-images.githubusercontent.com/60011091/120106169-b1048880-c179-11eb-9b08-9070f0996fa2.png)
 
 Here in this circuit even if there is a reset or not the Q value value is going to be 0. So Y value is always 1 as it has nand gate inverting the value of Q.
 
@@ -463,11 +537,23 @@ Here in this circuit even if there is a reset or not the Q value value is going 
 -Sequential Logic cloning (floor plan aware synthesis)
 
 
-#### Lab for Combinational  Optimizations
+### Lab for Combinational  Optimizations
+
+     $ ls *opt*
+     $ ls *opt_check*
 
 ![Capture54](https://user-images.githubusercontent.com/60011091/120061083-145ac180-c079-11eb-9c58-5a438ee40fad.JPG)
 
 Here we will be taking first file opt_check module where we have assign y= a?b:0, which is a mux so at a=1, y will take b's values, but at a=0, y will take 0 as its value.
+
+    $ yosys
+    yosys> read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> read_verilog opt_check.v
+    yosys> synth -top opt_check
+    yosys> opt_clean -purge
+    yosys> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> show
+
 
 ![Capture56](https://user-images.githubusercontent.com/60011091/120061922-16bf1a80-c07d-11eb-9cac-3dbd5890260b.JPG)
 
@@ -477,11 +563,22 @@ Here we will be taking first file opt_check module where we have assign y= a?b:0
 
 ![Capture59](https://user-images.githubusercontent.com/60011091/120062043-a1077e80-c07d-11eb-9f5b-a41d7f00e3b9.JPG)
 
+#### Design
+
 ![Capture60](https://user-images.githubusercontent.com/60011091/120062096-e1ff9300-c07d-11eb-8b08-2368fcff286b.JPG)
 
 
 
 Here we will be taking second file opt_check2 module where we have assign y= a?1;b, which is a mux so at a=1, y will take 1, but at a=0, y will take b's value.
+
+
+    $ yosys
+    yosys> read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> read_verilog opt_check2.v
+    yosys> synth -top opt_check2
+    yosys> opt_clean -purge
+    yosys> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> show
 
 ![Capture61](https://user-images.githubusercontent.com/60011091/120062648-e37e8a80-c080-11eb-8cfa-82775f19018b.JPG)
 
@@ -495,27 +592,77 @@ Here we will be taking second file opt_check2 module where we have assign y= a?1
 
 ### Lab for Sequential Optimizations
 
+
+##### dff_const2
+
+
+     $ iverilog dff_const2.v tb_dff_const2.v
+     $ ./a.out
+     $ gtkwave tb_dff_const2.vcd
+
+    
+
 ![Capture65](https://user-images.githubusercontent.com/60011091/120063008-af0bce00-c082-11eb-8421-ce3623d80f16.JPG)
 
 ![Capture65](https://user-images.githubusercontent.com/60011091/120063135-5be64b00-c083-11eb-962c-8b8fa0067b9e.JPG)
 
+
+
 ![Capture66](https://user-images.githubusercontent.com/60011091/120063162-75879280-c083-11eb-884f-e3f4e6520d00.JPG)
-
-![Capture67](https://user-images.githubusercontent.com/60011091/120063291-0a8a8b80-c084-11eb-9b40-2c187432abab.JPG)
-
-![Capture68](https://user-images.githubusercontent.com/60011091/120063462-e8453d80-c084-11eb-88a5-2b511f59acec.JPG)
-
-
-
-#### dff_const1
-
 
 ![Capture69](https://user-images.githubusercontent.com/60011091/120063891-1592eb00-c087-11eb-8550-7be69f41940a.JPG)
 
 ![image](https://user-images.githubusercontent.com/60011091/120063938-5854c300-c087-11eb-88a0-843af2713ad9.png)
 
 
-#### Synthesis
+##### Synthesis
+
+    $ ls *dff*const*
+    $ gedit dff_const1.v o dff_const2.v
+    $ yosys
+    yosys> read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> read_verilog opt_check2.v
+    yosys> synth -top opt_check2
+    yosys> opt_clean -purge
+    yosys> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> show
+
+
+![Capture76](https://user-images.githubusercontent.com/60011091/120064872-14b08800-c08c-11eb-9468-8deca70722e9.JPG)
+
+
+![Capture77](https://user-images.githubusercontent.com/60011091/120064869-0ebaa700-c08c-11eb-9ede-15414dc67fb9.JPG)
+
+
+#### Design
+
+![Capture78](https://user-images.githubusercontent.com/60011091/120064937-7a9d0f80-c08c-11eb-87b2-e59ecd7ad426.JPG)
+
+
+##### dff_const1
+
+     $ iverilog dff_const1.v tb_dff_const1.v
+     $ ./a.out
+     $ gtkwave tb_dff_const1.vcd
+     
+     
+![Capture67](https://user-images.githubusercontent.com/60011091/120063291-0a8a8b80-c084-11eb-9b40-2c187432abab.JPG)
+
+![Capture68](https://user-images.githubusercontent.com/60011091/120063462-e8453d80-c084-11eb-88a5-2b511f59acec.JPG)
+
+
+
+
+##### Synthesis
+
+
+    $ yosys
+    yosys> read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> read_verilog opt_check2.v
+    yosys> synth -top opt_check2
+    yosys> opt_clean -purge
+    yosys> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> show
 
 
 ![Capture71](https://user-images.githubusercontent.com/60011091/120064324-28a6ba80-c089-11eb-8125-353dab4c3d9d.JPG)
@@ -525,24 +672,41 @@ Here we will be taking second file opt_check2 module where we have assign y= a?1
 ![Capture73](https://user-images.githubusercontent.com/60011091/120064463-e5008080-c089-11eb-95a2-ccb329020724.JPG)
 
 ![Capture74](https://user-images.githubusercontent.com/60011091/120064499-0fead480-c08a-11eb-9c30-0618d420e1c1.JPG)
+
+#### Design
+
 ![Capture75](https://user-images.githubusercontent.com/60011091/120064527-3e68af80-c08a-11eb-8407-2d62f450cb8e.JPG)
 
-
-#### dff_const2
-![Capture76](https://user-images.githubusercontent.com/60011091/120064872-14b08800-c08c-11eb-9468-8deca70722e9.JPG)
-
-
-![Capture77](https://user-images.githubusercontent.com/60011091/120064869-0ebaa700-c08c-11eb-9ede-15414dc67fb9.JPG)
-
-![Capture78](https://user-images.githubusercontent.com/60011091/120064937-7a9d0f80-c08c-11eb-87b2-e59ecd7ad426.JPG)
 
 
 
 ### Lab for Sequential Optimizations for unused inputs
 
+
+#### Simulation and waveform viewer 
+
+    $ gedit counter_opt.v
+    $ iverilog counter_opt.v tb_counter_opt.v
+    $ ./a.out
+    $ gtkwave tb_counter_opt.vcd
+   
+   
+
+
 ![Capture79](https://user-images.githubusercontent.com/60011091/120065562-80482480-c08f-11eb-9bf1-2034ab11bd58.JPG)
 
 ![Capture80](https://user-images.githubusercontent.com/60011091/120065611-c8674700-c08f-11eb-9266-8fdb62792f4c.JPG)
+
+
+#### Sythesis 
+
+    $ yosys
+    yosys> read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> read_verilog counter_opt.v
+    yosys> synth -top counter_opt
+    yosys> dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> show
 
 ![Capture81](https://user-images.githubusercontent.com/60011091/120065772-af12ca80-c090-11eb-8dbd-9e3ca2515f74.JPG)
 
@@ -551,6 +715,8 @@ Here we will be taking second file opt_check2 module where we have assign y= a?1
 ![Capture83](https://user-images.githubusercontent.com/60011091/120065880-40823c80-c091-11eb-9fbf-256e002c2035.JPG)
 
 ![Capture84](https://user-images.githubusercontent.com/60011091/120065916-6d365400-c091-11eb-9fa2-14b3c2f76655.JPG)
+
+#### Design
 
 ![Capture85](https://user-images.githubusercontent.com/60011091/120065943-97881180-c091-11eb-93f0-edebfd1b5d30.JPG)
 
@@ -625,6 +791,8 @@ Solution to this problem is the below image
 
 #### Lab for GLS Synthesis Simulation Mismatch
 
+     
+
 ![Capture93](https://user-images.githubusercontent.com/60011091/120069040-716a6d80-c0a1-11eb-9b12-a4bc6133f156.JPG)
 
 ![Capture94](https://user-images.githubusercontent.com/60011091/120069064-91019600-c0a1-11eb-8207-03c76722fa11.JPG)
@@ -633,11 +801,23 @@ Solution to this problem is the below image
 
 ##### Simulation and Waveform Viewer
 
+    $ iverilog ternary_operator_mux.v tb_ternary_operator_mux.v
+    $ ./a.out
+    $ gtkwave tb_ternary_operator_mux.vcd
+
 ![Capture96](https://user-images.githubusercontent.com/60011091/120069346-2a7d7780-c0a3-11eb-8220-4bae1c506581.JPG)
 
 ![Capture97](https://user-images.githubusercontent.com/60011091/120069453-aecffa80-c0a3-11eb-9fcc-2a27e9374e83.JPG)
 
 ##### Synthesis
+    
+    $ yosys
+    yosys> read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> read_verilog ternary_operator_mux.v
+    yosys> synth -top ternary_operator_mux
+    yosys> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> write_verilog -noattr ternary_operator_mux_net.v
+    yosys> show
 
 ![Capture98](https://user-images.githubusercontent.com/60011091/120069595-4cc3c500-c0a4-11eb-9d89-c657dc38cd16.JPG)
 
@@ -647,10 +827,17 @@ Solution to this problem is the below image
 
 ![image](https://user-images.githubusercontent.com/60011091/120069881-ca3c0500-c0a5-11eb-9bbe-4025b42de784.png)
 
+#### Design 
+
 ![Capture102](https://user-images.githubusercontent.com/60011091/120069915-05d6cf00-c0a6-11eb-8ae8-82a67d194b0b.JPG)
 
 
 ##### GLS Simulation 
+
+    $ iverilog ../my_lib/verilog_model/primitive.v ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
+    $ ./a.out
+    $ gtkwave tb_ternary_operator_mux.vcd
+
 
 ![Capture103](https://user-images.githubusercontent.com/60011091/120070281-4d118f80-c0a7-11eb-9ced-6f5136dccab6.JPG)
 
@@ -664,11 +851,23 @@ Solution to this problem is the below image
 
 ##### Simulation
 
+    $ iverilog bad_mux.v tb_bad_mux.v
+    $ ./a.out
+    $ gtkwave tb_bad_mux.vcd
+
 ![Capture105](https://user-images.githubusercontent.com/60011091/120070515-8dbdd880-c0a8-11eb-97b2-5f2168cf2a9b.JPG)
 
 ![Capture106](https://user-images.githubusercontent.com/60011091/120070570-ce1d5680-c0a8-11eb-8061-2aeb8fc11e7b.JPG)
 
 ##### Synthesis 
+
+    $ yosys
+    yosys> read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> read_verilog bad_mux.v
+    yosys> synth -top bad_mux
+    yosys> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> write_verilog -noattr bad_mux_net.v
+    yosys> show
 
 ![Capture107](https://user-images.githubusercontent.com/60011091/120070740-a4186400-c0a9-11eb-8a26-37b1e55ff00b.JPG)
 
@@ -676,8 +875,17 @@ Solution to this problem is the below image
 
 ![Capture109](https://user-images.githubusercontent.com/60011091/120070889-55b79500-c0aa-11eb-8985-61f026007488.JPG)
 
+
+
 ###### GLS simulation 
+
+
+    $ iverilog ../my_lib/verilog_model/primitive.v ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux_net.v tb_bad_mux.v
+    $ ./a.out
+    $ gtkwave tb_bad_mux.vcd
+
 ![Capture110](https://user-images.githubusercontent.com/60011091/120071048-06259900-c0ab-11eb-8aa5-6179f6f770ff.JPG)
+
 
 ###### Comparison
 
@@ -687,17 +895,34 @@ Solution to this problem is the below image
 
 
 
+
 #### Lab for Synthesis Simulation Mismatch for blocking statements
 
 ![Capture112](https://user-images.githubusercontent.com/60011091/120071837-8dc0d700-c0ae-11eb-9e59-da6b4d3533f4.JPG)
 
-The above image d= x &c and x = a|b, here we have to take previous value of x for evaluating d as if x is to be a flopped output in simulation 
+The above image d= x &c and x = a|b, here we have to take previous value of x for evaluating d as if x is to be a flopped output in simulation
+
+
+    $ gedit blocking_caveat.v
+    $ iverilog blocking_caveat.v tb_blocking_caveat.v
+    $ ./a.out
+    $ gtkwave tb_blocking_caveat.vcd
+
 
 ![Capture113](https://user-images.githubusercontent.com/60011091/120072100-a1207200-c0af-11eb-9522-950b98274211.JPG)
 
 ![Capture114](https://user-images.githubusercontent.com/60011091/120072169-02e0dc00-c0b0-11eb-8981-2d1cf5d092b2.JPG)
 
 ##### Synthesis 
+
+    $ yosys
+    yosys> read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> read_verilog blocking_caveat.v
+    yosys> synth -top blocking_caveat
+    yosys> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> write_verilog -noattr blocking_caveat_net.v
+    yosys> show
+
 
 ![Capture115](https://user-images.githubusercontent.com/60011091/120072252-85699b80-c0b0-11eb-964e-3f237a9b15ee.JPG)
 
@@ -707,7 +932,13 @@ The above image d= x &c and x = a|b, here we have to take previous value of x fo
 
 ![Capture118](https://user-images.githubusercontent.com/60011091/120072390-56075e80-c0b1-11eb-8857-c37bde65ffd6.JPG)
 
+
 ##### GLS Simulation
+
+    $ iverilog ../my_lib/verilog_model/primitive.v ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat_net.v tb_blocking_caveat.v
+    $ ./a.out
+    $ gtkwave tb_blocking_caveat.vcd
+
 
 ![Capture119](https://user-images.githubusercontent.com/60011091/120072537-08d7bc80-c0b2-11eb-8a26-717b70daad95.JPG)
 
@@ -785,25 +1016,25 @@ The above structure depending on the number of if-else if statements we can map 
 
 Case statements are used inside always block. Variables used in case statements are register variables. Example for case statement is shown below:
 
-reg y;
-always @(*)
-begin
-  case(sel)
-       2'b00: begin
+       reg y;
+       always @(*)
+       begin
+       case(sel)
+           2'b00: begin
               ---------
               ---------
-              end
-       2'b01: begin
+                  end
+           2'b01: begin
               ---------
               ---------
-              end
+                  end
        ---------------
        ---------------
        ---------------
-       default: -----------
-       --------------------
-   endcase
-end
+           default: -----------
+           --------------------
+      endcase
+      end
 
 
 #### Caveats in case statements
@@ -814,10 +1045,10 @@ end
 This incomplete case statements also causes inferred latches just as in incomplete if statements. The example is shown below:
 
 
-reg y;
-always @(*)
-begin
-  case(sel)
+    reg y;
+    always @(*)
+    begin
+     case(sel)
        2'b00: begin
               ---------
               ---------
@@ -826,8 +1057,8 @@ begin
               ---------
               ---------
               end
-  endcase
-end  
+     endcase
+    end  
        
 Since, we have not told what's to be done after 2'b01 condition, the hardware will map the rest as a latch to retain previous values.       
           
@@ -837,10 +1068,10 @@ Since, we have not told what's to be done after 2'b01 condition, the hardware wi
 ##### Partial assignment in case statement 
 
 
-reg y;
-always @(*)
-begin
-  case(sel)
+    reg y;
+    always @(*)
+    begin
+    case(sel)
        2'b00: begin
               x=a;
               y=b;
@@ -852,17 +1083,17 @@ begin
               x=d;
               y=b;
               end         
-  endcase
-end  
+    endcase
+    end  
 
 Here we see that in 2'b01 we have incomplete assignments ie x is assigned 'c' buy y value is not known to us due to this again latch up happens to retain the previous value of y ie it take y=b from 2'b00 condition. 
 
 ##### If we take an example like shown below, let's observe what happens next...
 
-reg y;
-always @(*)
-begin
-  case(sel)
+     reg y;
+     always @(*)
+     begin
+     case(sel)
        2'b00: begin
               ---------
               ---------
@@ -880,8 +1111,8 @@ begin
               ---------
               end      
               
-  endcase
-end  
+     endcase
+    end  
 
 Here we will be getting unpredictable output as case statements are executed one after the other escpecially reaching the last condition statement 2'b1?: where we say our MSB is 1 bur lsb can be anything from 1 or 0 ans we can predict the exact value of the final outputs.
 
@@ -893,13 +1124,26 @@ We will be taking an example, incomp_if file
 
 ![Capture121](https://user-images.githubusercontent.com/60011091/120091136-cd76d580-c125-11eb-8bba-89b9444ddf59.JPG)
 
+
 #### Simulation and waveform viewer
+
+    $ iverilog incomp_if.v tb_incomp_if.v
+    $ ./a.out
+    $ gtkwave tb_incomp_if.vcd
 
 ![Capture122](https://user-images.githubusercontent.com/60011091/120091567-db2e5a00-c129-11eb-8b6a-1f9c6f12fcf5.JPG)
 
 ![Capture123](https://user-images.githubusercontent.com/60011091/120091242-ea5fd880-c126-11eb-86dd-4a06ff8bdfc5.JPG)
 
 #### Synthesis 
+
+    $ yosys
+    yosys> read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> read_verilog incomp_if.v
+    yosys> synth -top incomp_if
+    yosys> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> show
+
 
 ![Capture124](https://user-images.githubusercontent.com/60011091/120091340-d8326a00-c127-11eb-9864-066676d79e62.JPG)
 
@@ -912,11 +1156,17 @@ We will be taking an example, incomp_if file
 
 ![Capture127](https://user-images.githubusercontent.com/60011091/120091407-7b837f00-c128-11eb-89fc-9f8a375f417b.JPG)
 
+
+
 We will be taking another example, incomp_if2
 
 ![Capture128](https://user-images.githubusercontent.com/60011091/120091510-622f0280-c129-11eb-96b3-07096ad36b11.JPG)
 
 #### Simulation and waveform viewer
+
+    $ iverilog incomp_if2.v tb_incomp_if2.v
+    $ ./a.out
+    $ gtkwave tb_incomp_if2.vcd 
 
 ![Capture129](https://user-images.githubusercontent.com/60011091/120095229-69163f00-c142-11eb-827d-9875b505d903.JPG)
 
@@ -924,6 +1174,13 @@ We will be taking another example, incomp_if2
 
 
 #### Synthesis 
+
+    $ yosys
+    yosys> read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> read_verilog incomp_if2.v
+    yosys> synth -top incomp_if2
+    yosys> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> show
 
 ![Capture131](https://user-images.githubusercontent.com/60011091/120091699-43ca0680-c12b-11eb-8384-9521e8ed6f24.JPG)
 ![Capture132](https://user-images.githubusercontent.com/60011091/120091830-25b0d600-c12c-11eb-8ca5-ccfbee87f8c8.JPG)
@@ -942,10 +1199,22 @@ We will be taking an example of complete case statement file
 
 #### Simulation and waveform viewer
 
+    $ iverilog comp_case.v tb_comp_case.v
+    $ ./a.out
+    $ gtkwave tb_comp_case.vcd 
+
 ![Capture136](https://user-images.githubusercontent.com/60011091/120095132-d2498280-c141-11eb-9a7a-5e73edfba553.JPG)
 ![Capture137](https://user-images.githubusercontent.com/60011091/120095239-77fcf180-c142-11eb-9fbf-638b675a8268.JPG)
 
 #### Synthesis 
+
+    $ yosys
+    yosys> read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> read_verilog comp_case.v
+    yosys> synth -top comp_case
+    yosys> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> show
+    
 ![image](https://user-images.githubusercontent.com/60011091/120095340-1be69d00-c143-11eb-9088-281423fb4dba.png)
 ![Capture139](https://user-images.githubusercontent.com/60011091/120095358-3ae52f00-c143-11eb-84b9-5745c1476b4a.JPG)
 ![Capture140](https://user-images.githubusercontent.com/60011091/120095383-5c461b00-c143-11eb-8698-0e2f4c872a74.JPG)
@@ -961,6 +1230,10 @@ We will be taking another example, incomplete statement file
 
 
 #### Simulation and waveform viewer
+     
+    $ iverilog incomp_case.v tb_incomp_case.v
+    $ ./a.out
+    $ gtkwave tb_incomp_case.vcd 
 
 ![Capture143](https://user-images.githubusercontent.com/60011091/120095580-53a21480-c144-11eb-819d-3f940e974a29.JPG)
 
@@ -968,6 +1241,13 @@ We will be taking another example, incomplete statement file
 
 
 #### Synthesis 
+
+    $ yosys
+    yosys> read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> read_verilog incomp_case.v
+    yosys> synth -top incomp_case
+    yosys> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> show
 
 ![Capture145](https://user-images.githubusercontent.com/60011091/120095703-f2c70c00-c144-11eb-9358-e375bd8e7513.JPG)
 
@@ -990,15 +1270,15 @@ Looping constructs uses for loop and  generate for loop statements
 For loops can be used only inside always block. These loops can be used for evaluating expressions but not for instantaiating hardware.
 Example we are taking is a 32:1 Mux is as shown below:
 
-integer i;
-always @(*)
-begin 
+    integer i;
+    always @(*)
+    begin 
      for(i=0; i<32; i=i=1)
      begin
      if (i==sel)
        y= inp[i];    //Assuming that inp[32:0] bus is declared in the main module.
      end
-end     
+    end     
 
 
 #### Generate for loop statement
@@ -1007,6 +1287,7 @@ Generate for loop cannot be used inside always block but outside always block. G
 Taking an example for generate foor loop as shown below
 
 Suppose we need to instantiate and u_and( .a(), .b(), .y()) for 20 times it is not feasible to and u_and( .a(), .b(), .y()) this many times ie 
+
        and u_and( .a(), .b(), .y())
        and u_and( .a(), .b(), .y())
        and u_and( .a(), .b(), .y())
@@ -1018,24 +1299,29 @@ Suppose we need to instantiate and u_and( .a(), .b(), .y()) for 20 times it is n
 
 Here we use generate for loops to instantiate gates and smaller modules in main modules as my times we want.
 
-genvar i
-generate
+     genvar i
+     generate
       for (i=0; i,8; i=i+1) begin 
       and u_and( .a(a[i]), .b(b[i]), .y(y[i]));
       end
-end
+     end
 
 
       
 ### Lab for  For loop statement and For generate statements
 
 
-We are taking an example where we are taking mux_ generate file.
+We are taking an example where we are taking mux_generate file.
 
 ![Capture149](https://user-images.githubusercontent.com/60011091/120096767-ef368380-c14a-11eb-8093-c21ec2fd0c2c.JPG)
 
 
 #### Simulation and waveform viewer
+
+    $ iverilog mux_generate.v tb_mux_generate.v
+    $ ./a.out
+    $ gtkwave tb_mux_generate.vcd 
+
 
 ![Capture150](https://user-images.githubusercontent.com/60011091/120097488-53a71200-c14e-11eb-82b5-4ce60d6f095e.JPG)
 
@@ -1044,6 +1330,12 @@ We are taking an example where we are taking mux_ generate file.
 
 #### Synthesis
 
+    $ yosys
+    yosys> read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> read_verilog mux_generate.v
+    yosys> synth -top mux_generate
+    yosys> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> show
 
 
 ![Capture152](https://user-images.githubusercontent.com/60011091/120097751-e5fbe580-c14f-11eb-97a6-92557704c606.png)
@@ -1070,13 +1362,25 @@ We are taking an example where we are taking rca.v file which is a ripple carry 
 
 #### Simulation and waveform viewer
 
+    $ iverilog fa.v rca.v tb_rca.v
+    $ ./a.out
+    $ gtkwave tb_rca.vcd 
+
 ![Capture161](https://user-images.githubusercontent.com/60011091/120098397-52c4af00-c153-11eb-8558-8f3a548c877c.JPG)
 
 ![Capture162](https://user-images.githubusercontent.com/60011091/120098533-0f1e7500-c154-11eb-95d6-5269c0bfccfd.JPG)
 
 
 #### Synthesis
-
+     
+     $ yosys
+    yosys> read_liberty -lib  ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> read_verilog fa.v rca.v
+    yosys> synth -top rca
+    yosys> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> write_verilog -noattr rca_net.v
+    yosys> show
+     
 ![Capture163](https://user-images.githubusercontent.com/60011091/120098777-6ec95000-c155-11eb-98b0-5f50edb6b0ce.JPG)
 
 
@@ -1102,7 +1406,10 @@ We are taking an example where we are taking rca.v file which is a ripple carry 
 
 #### GLS Simulation
 
-
+    $ iverilog ../my_lib/verilog_model/primitive.v ../my_lib/verilog_model/sky130_fd_sc_hd.v rca_net.v tb_rca.v
+    $ ./a.out
+    $ gtkwave tb_blocking_caveat.vcd
+    
 ![Capture169](https://user-images.githubusercontent.com/60011091/120099488-51968080-c159-11eb-9a5b-1d352cc0416e.JPG)
 
 
@@ -1123,6 +1430,6 @@ By this, we have come to the end of 5 days workshop so by now I have sucessfully
 
 ## Acknowledgements
 
-Shon Taware - VSD Teaching Assistant
-
-Kunal Ghosh - Co-founder(VSD Corp. Pvt. Ltd)
+1. Kunal Ghosh - Co-founder(VSD Corp. Pvt. Ltd)
+2. Shon Taware - VSD Teaching Assistant
+3. Chaitanya Bharathi 
