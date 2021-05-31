@@ -54,7 +54,7 @@ VSD Sky130 RTL Design and Synthesis Workshop was a five day workshop conducted b
 
 ### RTL Simulation  
 
-![image](https://user-images.githubusercontent.com/60011091/119868845-318a7580-bf3d-11eb-816c-7fef5d3e4eb0.png) 
+![image](https://user-images.githubusercontent.com/60011091/120129928-94e90180-c1e2-11eb-86d6-553723fbd38e.png)
 
 
 
