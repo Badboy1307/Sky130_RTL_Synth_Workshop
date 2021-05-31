@@ -219,10 +219,11 @@ These are collection of logic modules which consists of basic gates like and, or
 
 In the logic path, combinational delay determines the maximum speed of operation of digital logic circuits.
 
-![image](https://user-images.githubusercontent.com/60011091/119996267-2b070700-bfec-11eb-9a6e-53f8e29f236e.png)
+![image](https://user-images.githubusercontent.com/60011091/120128152-fb6c2080-c1de-11eb-923c-fb3a91717f17.png)
 
 
-![image](https://user-images.githubusercontent.com/60011091/119998864-c0a39600-bfee-11eb-8908-761776245f1c.png)
+![image](https://user-images.githubusercontent.com/60011091/120128205-1c347600-c1df-11eb-9469-071d27d94dc8.png)
+
 
 
 The above images describes the clock cycle process and how it can be calculated. We need faster cell lib for faster clock speed and setup time. But we need slower cells to avoid hold time issues. Collection of fast cells and slow cells form the .lib.
