@@ -221,10 +221,14 @@ In the logic path, combinational delay determines the maximum speed of operation
 
 ![image](https://user-images.githubusercontent.com/60011091/120128152-fb6c2080-c1de-11eb-923c-fb3a91717f17.png)
 
+          #  TCLK > TCQ_A+TCOMBI+TSETUP_B
+          
+          
+          
+![image](https://user-images.githubusercontent.com/60011091/120129693-07a5ad00-c1e2-11eb-804c-1a6e83c31666.png)
 
-![image](https://user-images.githubusercontent.com/60011091/120128205-1c347600-c1df-11eb-9469-071d27d94dc8.png)
 
-
+          #   THOLD_B< TCQ_A+TCOMBI
 
 The above images describes the clock cycle process and how it can be calculated. We need faster cell lib for faster clock speed and setup time. But we need slower cells to avoid hold time issues. Collection of fast cells and slow cells form the .lib.
 
