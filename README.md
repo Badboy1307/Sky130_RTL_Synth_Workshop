@@ -105,7 +105,7 @@ Now that the  prerequisites of git cloning are done we need to start cloning vsd
 
 VSDFLOW repository can be cloned by git clone
                                
-    $ https://github.com/kunalg123/vsdflow.git
+    $ git clone https://github.com/kunalg123/vsdflow.git
     $ cd vsdflow
     $  ls -ltr
 
@@ -127,7 +127,7 @@ g) OpenTimer & OpenSTA are STA (Static timing analysis) tools
 sky130 RTL Design and Synthesis Workshop can be cloned by 
 
 
-      $ https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+      $ git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
       $ cd sky130RTLDesignAndSynthesisWorkshop
       $ ls -ltr 
                                   
