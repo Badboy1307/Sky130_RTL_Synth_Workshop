@@ -757,7 +757,7 @@ Here we will be taking second file opt_check2 module where we have assign y= a?1
 
 
 
-## DAY-4 Gate Level Synthesis  Synthesis Simulation mismatch and Blocking Non blocking statements
+## Day-4 Gate Level Synthesis  Synthesis Simulation mismatch and Blocking Non blocking statements
 
  ### GLS
 
