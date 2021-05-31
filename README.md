@@ -1445,7 +1445,7 @@ We are taking an example where we are taking rca.v file which is a ripple carry 
 
 #### GLS Simulation
 
-    $ iverilog ../my_lib/verilog_model/primitive.v ../my_lib/verilog_model/sky130_fd_sc_hd.v rca_net.v tb_rca.v
+    $ iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v rca_net.v tb_rca.v
     $ ./a.out
     $ gtkwave tb_blocking_caveat.vcd
     
