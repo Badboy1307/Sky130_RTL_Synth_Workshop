@@ -167,7 +167,7 @@ In this lab iverilog was used as simulator and gtkwave for vcd waveform viewer
        $ iverilog good_mux.v tb_good.mux.v
        $ ls
        $ ./a.out
-       $ gtkwave tb_good_mux.v
+       $ gtkwave tb_good_mux.vcd
 
 #### Simulation and Waveform Viewer
 
