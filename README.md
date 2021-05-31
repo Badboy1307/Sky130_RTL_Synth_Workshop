@@ -278,7 +278,7 @@ Wider transistors has low delays but greater power and area for a given design s
 sky130_fd_sc_hd__o21ai_1 in netlist visualization has 3 inputs and 1 output as it has 2 input OR  gate into first input of 2input NAND gate. sky130_fd_sc_hd is a high density digital standard cell contributed Skywater foundry.
 
 
-## Day-2 Timing libs  Hierarchy versus flat synthesis and efficient flop styles
+## Day-2 Timing libs Hierarchy versus flat synthesis and efficient flop styles
 
 ### dotlib file lab 
 ![Capture13](https://user-images.githubusercontent.com/60011091/120023408-5c42ff80-c00b-11eb-9695-e9d3daf567db.JPG)
