@@ -1347,7 +1347,7 @@ Here we use generate for loops to instantiate gates and smaller modules in main 
 
 
       
-### Lab for  For loop statement and For generate statements
+### Lab for For loop statement and For generate statements
 
 
 We are taking an example where we are taking mux_generate file.
