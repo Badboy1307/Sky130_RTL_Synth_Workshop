@@ -219,13 +219,13 @@ These are collection of logic modules which consists of basic gates like and, or
 
 In the logic path, combinational delay determines the maximum speed of operation of digital logic circuits.
 
-![image](https://user-images.githubusercontent.com/60011091/120128152-fb6c2080-c1de-11eb-923c-fb3a91717f17.png)
+![image](https://user-images.githubusercontent.com/60011091/120130050-db3e6080-c1e2-11eb-94ad-fc3dbae7b1e4.png)
+
 
           #  TCLK > TCQ_A+TCOMBI+TSETUP_B
           
-          
-          
-![image](https://user-images.githubusercontent.com/60011091/120129693-07a5ad00-c1e2-11eb-804c-1a6e83c31666.png)
+  ![image](https://user-images.githubusercontent.com/60011091/120130148-1476d080-c1e3-11eb-9691-6e646c7e97ee.png)
+
 
 
           #   THOLD_B< TCQ_A+TCOMBI
